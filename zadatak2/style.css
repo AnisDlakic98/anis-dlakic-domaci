@@ -1,0 +1,33 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+.indent li:nth-child(even) {
+  margin-left: 35px;
+}
+.container {
+  padding: 0 80px;
+}
+.padding {
+  padding: 20px 0;
+}
+/* Header */
+#navbar li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 5px;
+}
+#navbar li:not(:last-child) {
+  border-right: 2px solid #cccccc;
+}
+#navbar li:first-child {
+  padding-left: 0;
+}
+.page-title {
+  border-bottom: 2px solid #cccccc;
+  border-top: 2px solid #cccccc;
+}
