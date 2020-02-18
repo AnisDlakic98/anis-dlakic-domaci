@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Domaci | Zadatak 1</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="padding">
+        <div class="container">
+          <ul>
+            <li><a href="#" class="active">Zadatak 1</a></li>
+            <li><a href="../zadatak2i3/index2.html">Zadatak 2 i 3</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <form action="zadatak1.php" method="post">
+      <h2 class="form-title">Zadatak 1</h2 class="form-title">
+      <div class="form-group">
+        <input type="text" id="firstName" name="firstName" placeholder="Ime" />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Prezime"
+        />
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Email" />
+      </div>
+      <div class="form-group">
+        <input type="text" id="phone" name="phone" placeholder="Br. telefona" />
+      </div>
+      <div class="form-group">
+        <select name="year" id="year">
+          <option value="I">I</option>
+          <option value="II">II</option>
+          <option value="III">III</option>
+          <option value="IV">IV</option>
+        </select>
+      </div>
+      <div class="form-btn">
+        <input type="submit" value="Submit" name="submit" class="btn" />
+      </div>
+    </form>
+  </body>
+</html>
