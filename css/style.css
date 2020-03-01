@@ -61,7 +61,7 @@ a {
   left: 0;
   right: 0;
   opacity: 0.5;
-  background-image: url("../../img/laptop.jpg");
+  background-image: url("../img/laptop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
@@ -271,7 +271,7 @@ form input:last-child {
   overflow: hidden;
   position: relative;
   color: #fff;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#008eff), to(#04ffa9ba)), url(../../img/landing.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#008eff), to(#04ffa9ba)), url(../img/landing.jpg);
   background-image: linear-gradient(to bottom, #008eff, #04ffa9ba), url(../img/landing.jpg);
   background-size: cover;
 }
@@ -343,8 +343,8 @@ form input:last-child {
 
 #amplitudo_contact {
   background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#008eff), to(#04ffa9ba)), url(../../img/landing.jpg);
-  background-image: linear-gradient(to bottom, #008eff, #04ffa9ba), url(../../img/landing.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#008eff), to(#04ffa9ba)), url(../img/landing.jpg);
+  background-image: linear-gradient(to bottom, #008eff, #04ffa9ba), url(../img/landing.jpg);
   background-size: cover;
 }
 
