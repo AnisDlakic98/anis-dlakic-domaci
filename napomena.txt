@@ -1,0 +1,2 @@
+- Domaci sam radio sa sass-om, uz malu improvizaciju, postujuci zadatke
+- Media query se nalazi u css/omponents/responsive

@@ -1,0 +1,445 @@
+/*--------------------------- Color variations ----------------------*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  padding-top: 7.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section.reading {
+  background-color: #ffffffcc;
+}
+
+.responsive {
+  width: 100%;
+}
+
+.img_1x1 {
+  background: #000000;
+  position: relative;
+  width: 500px;
+  padding-top: 45.25%;
+  /* 16:9 Aspect Ratio */
+  margin: 7px;
+}
+
+.img_1x1 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.image-wrapper {
+  width: 55%;
+}
+
+.funny-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  background-image: url("../../img/laptop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  -webkit-animation-name: huesat;
+          animation-name: huesat;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.fixed {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: #fff;
+  border: 0.2rem solid #2200ff;
+  padding: 2rem;
+  color: #000000;
+  text-decoration: none;
+  z-index: 11;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius: 100%;
+  width: 120px;
+  height: 120px;
+  line-height-step: 120px;
+  text-align: center;
+}
+
+.fixed:hover {
+  -webkit-filter: hue-rotate(-90deg);
+          filter: hue-rotate(-90deg);
+}
+
+@-webkit-keyframes huesat {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes huesat {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+.col-2dot4,
+.col-sm-2dot4,
+.col-md-2dot4,
+.col-lg-2dot4,
+.col-xl-2dot4 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-2dot4 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+@media (min-width: 540px) {
+  .col-sm-2dot4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 720px) {
+  .col-md-2dot4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 960px) {
+  .col-lg-2dot4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 1140px) {
+  .col-xl-2dot4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+form {
+  width: 30%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form input,
+form label,
+form select {
+  display: block;
+  width: 100%;
+  font-size: 150%;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  border-radius: 2rem;
+}
+
+form input,
+form select {
+  opacity: 0.3;
+}
+
+form label {
+  text-align: left;
+}
+
+form input:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 1;
+  border-radius: 0.4rem;
+}
+
+form select:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 1;
+  border-radius: 0.4rem;
+}
+
+form input:hover,
+form select:hover {
+  opacity: 1;
+}
+
+form input:last-child {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+#amplitudo_nav {
+  background-color: #ffffff !important;
+  height: 120px;
+}
+
+#amplitudo_nav .navbar-brand {
+  color: #00abff !important;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#amplitudo_nav .navbar-brand:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+#amplitudo_nav .navbar-brand span {
+  color: #01ff97 !important;
+  text-transform: uppercase;
+}
+
+#amplitudo_nav .navbar-nav .nav-item {
+  padding: 1.2rem 2rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 0.25rem solid #fff;
+}
+
+#amplitudo_nav .navbar-nav .nav-item:hover {
+  border-color: #00abff;
+}
+
+.nav-item.active {
+  border-bottom: 0.25rem solid #00abff !important;
+}
+
+#amplitudo_jumbotron {
+  padding: 0;
+  height: 90vh;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#008eff), to(#04ffa9ba)), url(../../img/landing.jpg);
+  background-image: linear-gradient(to bottom, #008eff, #04ffa9ba), url(../../img/landing.jpg);
+  background-size: cover;
+}
+
+#amplitudo_courses .card {
+  border: 2px solid black;
+  border-radius: 2rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+#amplitudo_courses .card .card-body {
+  margin-top: -20px;
+}
+
+#amplitudo_courses .card .card-body .card-title {
+  color: #fff;
+}
+
+#amplitudo_courses .card .card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  overflow: hidden;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+  height: 200px;
+}
+
+#amplitudo_courses .card .card-link {
+  position: relative;
+  height: 150px;
+  background-color: #000000 !important;
+  padding: 2rem 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+#amplitudo_courses .card:hover .card-img-top {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+#amplitudo_courses .card:hover .card-link {
+  background: #fff !important;
+}
+
+#amplitudo_courses .card:hover .card-link .card-title {
+  color: #000000;
+}
+
+.courses_offset .img_16x9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
+}
+
+.courses_offset .img_16x9 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+}
+
+#amplitudo_contact {
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#008eff), to(#04ffa9ba)), url(../../img/landing.jpg);
+  background-image: linear-gradient(to bottom, #008eff, #04ffa9ba), url(../../img/landing.jpg);
+  background-size: cover;
+}
+
+form {
+  width: 30%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form input,
+form label,
+form select {
+  display: block;
+  width: 100%;
+  font-size: 150%;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  border-radius: 2rem;
+}
+
+form input,
+form select {
+  opacity: 0.7;
+  outline: none;
+}
+
+form label {
+  text-align: left;
+}
+
+form input:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 1;
+  border-radius: 0.4rem;
+}
+
+form select:focus {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 1;
+  border-radius: 0.4rem;
+}
+
+form input:hover,
+form select:hover {
+  opacity: 1;
+}
+
+form input:last-child {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  #amplitudo_courses .col-md-4,
+  .courses_offset .col-2dot4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+  }
+  #amplitudo_contact form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #amplitudo_nav {
+    background: #000000 !important;
+  }
+  #amplitudo_nav .navbar-nav {
+    background: #fff !important;
+    margin-top: 100px;
+  }
+  .image-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #amplitudo_courses .col-md-4,
+  .courses_offset .col-2dot4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #amplitudo_contact form {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

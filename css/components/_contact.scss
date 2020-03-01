@@ -1,0 +1,55 @@
+#amplitudo_contact {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to bottom, #008eff, #04ffa9ba),
+    url(../../img/landing.jpg);
+  background-size: cover;
+}
+
+form {
+  width: 30%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+form input,
+form label,
+form select {
+  display: block;
+  width: 100%;
+  font-size: 150%;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem;
+  transition: all 1s;
+  border-radius: 2rem;
+}
+form input,
+form select {
+  opacity: 0.7;
+  outline: none;
+}
+form label {
+  text-align: left;
+}
+
+form input:focus {
+  transform: scale(1.05);
+  opacity: 1;
+  border-radius: 0.4rem;
+}
+
+form select:focus {
+  transform: scale(1.05);
+  opacity: 1;
+  border-radius: 0.4rem;
+}
+
+form input:hover,
+form select:hover {
+  opacity: 1;
+}
+form input:last-child {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}

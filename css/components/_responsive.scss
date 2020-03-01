@@ -1,0 +1,37 @@
+@media screen and (max-width: 1024px) {
+  #amplitudo_courses .col-md-4,
+  .courses_offset .col-2dot4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  #amplitudo_contact form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #amplitudo_nav {
+    background: $text-color !important;
+
+    .navbar-nav {
+      background: $white !important;
+      margin-top: 100px;
+    }
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #amplitudo_courses .col-md-4,
+  .courses_offset .col-2dot4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  #amplitudo_contact form {
+    width: 80%;
+  }
+}

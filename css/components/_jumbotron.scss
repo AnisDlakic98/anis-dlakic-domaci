@@ -1,0 +1,10 @@
+#amplitudo_jumbotron {
+  padding: 0;
+  height: 90vh;
+  overflow: hidden;
+  position: relative;
+  color: $white;
+  background-image: linear-gradient(to bottom, #008eff, #04ffa9ba),
+    url(../../img/landing.jpg);
+  background-size: cover;
+}

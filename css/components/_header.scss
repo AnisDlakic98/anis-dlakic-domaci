@@ -1,0 +1,32 @@
+#amplitudo_nav {
+  background-color: #ffffff !important;
+  height: 120px;
+
+  .navbar-brand {
+    color: $secondary-color !important;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.4);
+    }
+
+    span {
+      color: $primary-color !important;
+      text-transform: uppercase;
+    }
+  }
+
+  .navbar-nav .nav-item {
+    padding: 1.2rem 2rem;
+    transition: all 0.3s;
+    border-bottom: 0.25rem solid $white;
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+  }
+}
+
+.nav-item.active {
+  border-bottom: 0.25rem solid $secondary-color !important;
+}
