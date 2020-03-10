@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Switch</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body id="body">
+    <div id="overlay"></div>
+    <div class="container">
+      <div id="opacity"></div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script>
+      function blur() {
+        var opacity = $("#opacity").slider("value");
+        $("#overlay").css("-webkit-filter", "opacity(" + opacity + "%)");
+      }
+
+      $(function() {
+        $("#opacity").slider({
+          orientation: "horizontal",
+          min: 0,
+          max: 100,
+          value: 100,
+          slide: blur,
+          change: blur
+        });
+      });
+    </script>
+  </body>
+</html>

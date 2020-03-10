@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+    >
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#main"
+              >Main <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#offers">Offers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#team">Team</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="main">
+      <!-- uklonio sam img tag i stavio sliku kao background zbog paralax-a -->
+      <!-- <img src="background.jpg" id="main-img" class="h-100 w-100" /> -->
+      <div id="main-foreground"></div>
+      <div class="text text-white d-flex align-items-center ml-5">
+        <div class="jumbotron bg-transparent">
+          <h1 class="display-3">Jumbo heading</h1>
+          <p class="lead">Jumbo helper text</p>
+          <p class="lead mt-3">
+            <a
+              class="btn btn-transparent btn-lg pill subscribe-btn"
+              href="Jumbo action link"
+              role="button"
+              >Subscribe</a
+            >
+            <a
+              class="btn btn-transparent btn-lg pill jumbo-btn"
+              href="Jumbo action link"
+              role="button"
+              >Jumbo action name</a
+            >
+          </p>
+        </div>
+      </div>
+      <svg
+        id="background-waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#f3f4f5"
+          fill-opacity="1"
+          d="M0,256L60,229.3C120,203,240,149,360,128C480,107,600,117,720,154.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
+      <svg
+        id="foreground-waves"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#4b134f"
+          fill-opacity="1"
+          d="M0,256L60,229.3C120,203,240,149,360,128C480,107,600,117,720,154.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+    <div id="section-container" class="pt-5">
+      <section id="offers">
+        <div class="container h-100">
+          <div id="first-row" class="row">
+            <div class="col-12 col-sm-6 px-2 text-light pt-5rem">
+              <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence
+                structures, to generate Lorem Ipsum which looks reasonable. The
+                generated Lorem Ipsum is therefore always free ...
+              </p>
+              <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence
+                structures, to generate Lorem Ipsum which looks reasonable. The
+                generated Lorem Ipsum is therefore always free ...
+              </p>
+              <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as over 200 Latin words, combined with a
+                handful of model str
+              </p>
+            </div>
+            <div class="col-12 col-sm-6 px-2">
+              <img
+                src="img/background.jpg"
+                class="img row-image"
+                width="100%"
+                height="80%"
+              />
+            </div>
+          </div>
+
+          <div id="second-row" class="row mt-2">
+            <div class="col-12 col-sm-6 px-2">
+              <img
+                src="img/background.jpeg"
+                class="img"
+                width="100%"
+                height="80%"
+              />
+            </div>
+            <div class="col-12 col-sm-6 px-2 text-light">
+              <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence
+                structures, to generate Lorem Ipsum which looks reasonable. The
+                generated Lorem Ipsum is therefore always free ...
+              </p>
+              <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence
+                structures, to generate Lorem Ipsum which looks reasonable. The
+                generated Lorem Ipsum is therefore always free ...
+              </p>
+              <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as over 200 Latin words, combined with a
+                handful of model str
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="mt-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8 text-center">
+              <h1>About</h1>
+              <p class="mt-4 text-light">
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence
+                structures, to generate Lorem Ipsum which looks reasonable. The
+                generated Lorem Ipsum is therefore always free ...
+              </p>
+              <p class="mt-4 text-light">
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of model sentence
+                structures, to generate Lorem Ipsum which looks reasonable. The
+                generated Lorem Ipsum is therefore always free ...
+              </p>
+
+              <button
+                class="submit-btn btn mt-5 btn-transparent text-light px-5"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section id="team">
+        <div class="container text-center">
+          <h1 class="pb-5">Meet Our Team</h1>
+          <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class=" img-fluid"
+                            src="img/ja.png"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Anis Dlakic</h4>
+                        <p class="card-text">Front End Developer</p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Anis Dlakic</h4>
+                        <p class="card-text">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Expedita amet reiciendis a libero id! Omnis quae
+                          enim, autem fuga exercitationem doloribus voluptates
+                          quo eum explicabo deleniti voluptatum, modi dolorem
+                          pariatur.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class=" img-fluid"
+                            src="img/vaske.png"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Vasilije Milinic</h4>
+                        <p class="card-text">
+                          Back End Developer
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Vasilije Milinic</h4>
+                        <p class="card-text">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Inventore necessitatibus, quaerat nulla sint
+                          explicabo laboriosam magni laudantium cupiditate
+                          delectus accusamus dolore minus fugit quasi? Dicta
+                          distinctio necessitatibus nihil ea consequatur.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div
+                class="image-flip"
+                ontouchstart="this.classList.toggle('hover');"
+              >
+                <div class="mainflip">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body text-center">
+                        <p>
+                          <img
+                            class=" img-fluid"
+                            src="img/emir.png"
+                            alt="card image"
+                          />
+                        </p>
+                        <h4 class="card-title">Emir Kosuta</h4>
+                        <p class="card-text">
+                          Android Developer
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm"
+                          ><i class="fa fa-plus"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">Emir Kosuta</h4>
+                        <p class="card-text">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Inventore necessitatibus, quaerat nulla sint
+                          explicabo laboriosam magni laudantium cupiditate
+                          delectus accusamus dolore minus fugit quasi? Dicta
+                          distinctio necessitatibus nihil ea consequatur.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="#"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+          </div>
+        </div>
+      </section>
+      <!-- Team -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#ef6060"
+          fill-opacity="1"
+          d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,149.3C672,171,768,245,864,261.3C960,277,1056,235,1152,229.3C1248,224,1344,256,1392,272L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+
+      <footer class="footer-area">
+        <div class="footer-big">
+          <!-- start .container -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-12">
+                <div class="footer-widget">
+                  <div class="widget-about">
+                    <img
+                      src="https://www.amplitudo.me/assets/images/logoWhiteSvg.svg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Inventore necessitatibus, quaerat nulla sint explicabo
+                      laboriosam magni laudantium cupiditate.
+                    </p>
+                  </div>
+                </div>
+                <!-- Ends: .footer-widget -->
+              </div>
+              <!-- end /.col-md-4 -->
+              <div class="col-md-3 col-sm-4">
+                <div class="footer-widget">
+                  <div class="footer-menu footer-menu--1">
+                    <h4 class="footer-widget-title">Popular Category</h4>
+                    <ul>
+                      <li>
+                        <a href="#">Wordpress</a>
+                      </li>
+                      <li>
+                        <a href="#">Plugins</a>
+                      </li>
+                      <li>
+                        <a href="#">Joomla Template</a>
+                      </li>
+                      <li>
+                        <a href="#">Admin Template</a>
+                      </li>
+                      <li>
+                        <a href="#">HTML Template</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end /.footer-menu -->
+                </div>
+                <!-- Ends: .footer-widget -->
+              </div>
+              <!-- end /.col-md-3 -->
+
+              <div class="col-md-3 col-sm-4">
+                <div class="footer-widget">
+                  <div class="footer-menu">
+                    <h4 class="footer-widget-title">Our Company</h4>
+                    <ul>
+                      <li>
+                        <a href="#">About Us</a>
+                      </li>
+                      <li>
+                        <a href="#">How It Works</a>
+                      </li>
+                      <li>
+                        <a href="#">Affiliates</a>
+                      </li>
+                      <li>
+                        <a href="#">Testimonials</a>
+                      </li>
+                      <li>
+                        <a href="#">Contact Us</a>
+                      </li>
+                      <li>
+                        <a href="#">Plan &amp; Pricing</a>
+                      </li>
+                      <li>
+                        <a href="#">Blog</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end /.footer-menu -->
+                </div>
+                <!-- Ends: .footer-widget -->
+              </div>
+              <!-- end /.col-lg-3 -->
+
+              <div class="col-md-3 col-sm-4">
+                <div class="footer-widget">
+                  <div class="footer-menu no-padding">
+                    <h4 class="footer-widget-title">Help Support</h4>
+                    <ul>
+                      <li>
+                        <a href="#">Support Forum</a>
+                      </li>
+                      <li>
+                        <a href="#">Terms &amp; Conditions</a>
+                      </li>
+                      <li>
+                        <a href="#">Support Policy</a>
+                      </li>
+                      <li>
+                        <a href="#">Refund Policy</a>
+                      </li>
+                      <li>
+                        <a href="#">FAQs</a>
+                      </li>
+                      <li>
+                        <a href="#">Buyers Faq</a>
+                      </li>
+                      <li>
+                        <a href="#">Sellers Faq</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end /.footer-menu -->
+                </div>
+                <!-- Ends: .footer-widget -->
+              </div>
+              <!-- Ends: .col-lg-3 -->
+            </div>
+            <!-- end /.row -->
+          </div>
+          <!-- end /.container -->
+        </div>
+        <!-- end /.footer-big -->
+
+        <div class="mini-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="copyright-text">
+                  <p>
+                    © 2020 <a href="#">DigiPro</a>. All rights reserved. Created
+                    by
+                    <a href="#">Amplitudo</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // mozete zakomentarisati ovaj dio da vidite kako radi bez
+      // funkcija koja pri kliku na nav item daje offset visinu nav-a
+
+      $(window).stellar();
+
+      $(document).on("click", 'a[href^="#"]', function(event) {
+        event.preventDefault();
+        var offsetHeight = $("#navbar").height();
+        $("html, body").animate(
+          {
+            scrollTop:
+              $($.attr(this, "href")).offset().top - (offsetHeight + 25)
+          },
+          500
+        );
+      });
+    </script>
+  </body>
+</html>

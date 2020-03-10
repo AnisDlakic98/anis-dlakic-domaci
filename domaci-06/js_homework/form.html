@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Form</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row vh_100">
+        <div class="col-md-7 m-auto">
+          <form id="regiter_form">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="name_surname">Ime i prezime</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name_surname"
+                  name="name_surname"
+                  placeholder="Unesite ime i prezime"
+                />
+                <small id="nameSurnameErr" class="error"></small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                />
+                <small id="emailErr" class="error"></small>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="phone">Telefon</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Telefon"
+                />
+                <small id="phoneErr" class="error"></small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="description">Opis</label>
+                <textarea
+                  class="form-control"
+                  id="description"
+                  name="description"
+                  maxlength="100"
+                  placeholder="Opis..."
+                  autofocus
+                  cols="30"
+                  rows="10"
+                ></textarea>
+                <div id="the-count mr-auto text-right">
+                  <span id="current">0</span>
+                  <span id="maximum">/ 100</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="submit_btn">
+              Posalji
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+
+    <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam porro ipsum,
+    dolor assumenda quos reiciendis perferendis quisquam nemo delectus
+    recusandae quae iusto repellendus ipsam sunt inventore totam nulla at animi. -->
+
+    <script>
+      var isValid = false;
+
+      $("#description").on("keyup", function() {
+        var input = $(this);
+        var characterCount = $(this).val().length,
+          current = $("#current"),
+          maximum = $("#maximum"),
+          theCount = $("#the-count");
+
+        current.text(characterCount);
+        if (current.text() > 100) {
+          input.removeClass("valid").addClass("invalid");
+        } else {
+          input.removeClass("invalid").addClass("valid");
+        }
+      });
+
+      $("#name_surname").on("keyup", function() {
+        var input = $(this);
+        var inputData = $(this).val();
+        const pattern = /^[a-zA-Z]+[ ][a-zA-Z]+$/;
+        const nameSurnameErr = $("#nameSurnameErr");
+
+        var isNotEmpty =
+          inputData.length == 0 || inputData == "" ? false : true;
+
+        if (!isNotEmpty) {
+          nameSurnameErr.html("&#10007&nbsp; Molimo unesite ime i prezime!");
+          nameSurnameErr.css("color", "red");
+          input.removeClass("valid").addClass("invalid");
+        } else {
+          if (!inputData.match(pattern)) {
+            nameSurnameErr.html("&#10007&nbsp;Ime i prezime nije validno!");
+            nameSurnameErr.css("color", "red");
+            input.removeClass("valid").addClass("invalid");
+          } else {
+            nameSurnameErr.html("&#10004&nbsp; Ime i prezime je validno!");
+            nameSurnameErr.css("color", "green");
+            input.removeClass("invalid").addClass("valid");
+          }
+        }
+      });
+
+      $("#email").on("keyup", function() {
+        var input = $(this);
+        var inputData = $(this).val();
+        const emailErr = $("#emailErr");
+
+        var isNotEmpty =
+          inputData.length == 0 || inputData == "" ? false : true;
+
+        if (!isNotEmpty) {
+          emailErr.html("&#10007&nbsp; Molimo unesite email!");
+          emailErr.css("color", "red");
+          input.removeClass("valid").addClass("invalid");
+        } else {
+          if (
+            inputData.indexOf(".com") >= 0 &&
+            inputData.indexOf("@") >= 0 &&
+            inputData.length <= 50
+          ) {
+            emailErr.html("&#10004&nbsp;Email je validan!");
+            emailErr.css("color", "green");
+            input.removeClass("invalid").addClass("valid");
+          } else {
+            emailErr.html(
+              "&#10007&nbsp;Email mora da sadrzi .com i @ i max duzine od 50 karaktera!"
+            );
+            emailErr.css("color", "red");
+            input.removeClass("valid").addClass("invalid");
+          }
+        }
+      });
+
+      $("#phone").on("keyup", function() {
+        var input = $(this);
+        var inputData = $(this).val();
+        const phoneErr = $("#phoneErr");
+        const pattern = /^\d+$/;
+
+        var isNotEmpty =
+          inputData.length == 0 || inputData == "" ? false : true;
+
+        if (!isNotEmpty) {
+          phoneErr.html("&#10007&nbsp; Molimo unesite telefon!");
+          phoneErr.css("color", "red");
+          input.removeClass("valid").addClass("invalid");
+        } else {
+          if (inputData.match(pattern)) {
+            phoneErr.html("&#10004&nbsp;Broj je validan!");
+            phoneErr.css("color", "green");
+            input.removeClass("invalid").addClass("valid");
+          } else {
+            phoneErr.html("&#10007&nbsp;Broj nije validan!");
+            phoneErr.css("color", "red");
+            input.removeClass("valid").addClass("invalid");
+          }
+        }
+      });
+
+      // Validate all
+      $("#submit_btn").on("click", function() {
+        var form_data = $("#regiter_form").serializeArray();
+        var error_free = true;
+        for (var input in form_data) {
+          var element = $("#" + form_data[input]["name"]);
+          var valid = element.hasClass("valid");
+          if (!valid) {
+            error_free = false;
+          } else {
+            error_free = true;
+          }
+        }
+        !error_free
+          ? swal("Upozorenje!", "Molimo provjerite unesene podatke!", "warning")
+          : swal("Uspjesno!", "Uspjesno ste se registrovali!", "success");
+      });
+    </script>
+  </body>
+</html>
