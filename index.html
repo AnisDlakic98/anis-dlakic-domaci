@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <button class="btn btn-primary" id="renderBtn">Render</button>
+      </div>
+      <div class="row" id="cards"></div>
+      <!-- /.row -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+      $("#renderBtn").click(function() {
+        getData();
+      });
+
+      function getData() {
+        $.ajax({
+          url: "https://rickandmortyapi.com/api/character/",
+          type: "GET",
+          success: function(returndata) {
+            var allCharacters = new Array();
+
+            returndata.results.forEach(element => {
+              allCharacters.push(element);
+            });
+
+            var deadCharacters = allCharacters.filter(function(element) {
+              return element.status === "Dead";
+            });
+
+            for (var i = 0; i < deadCharacters.length; i++) {
+              var card = getCard(deadCharacters[i]);
+              $("#cards").append(card);
+            }
+          },
+          error: function() {
+            console.log("Error");
+          }
+        });
+      }
+
+      function getCard(postObject) {
+        return (
+          ` <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="` +
+          postObject.image +
+          `" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">` +
+          postObject.name +
+          `</h4>
+                        <h5>` +
+          postObject.status +
+          `</h5>
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">` +
+          postObject.species +
+          `</small>
+          <small class="text-muted">` +
+          postObject.origin.name +
+          `</small>
+                    </div>
+                </div>
+            </div>`
+        );
+      }
+    </script>
+  </body>
+</html>
