@@ -1,18 +1,3 @@
-<?php
-
-require_once "api.php";
-
-$temp_object = "";
-
-if (isset($_GET['id'])) {
-    $temp_id = $_GET['id'];
-    $temp_object = findByID($temp_id, $work);
-} else {
-    header("index.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,19 +7,25 @@ if (isset($_GET['id'])) {
     <title>Anis | Portfolio</title>
 
     <link rel="stylesheet" href="fonts/icomoon/style.css" />
-    <link rel="stylesheet" href="fonts/line-icons/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.7/ladda-themeless.min.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/contact.css" />
   </head>
-
 
   <body id="top" class="single_page">
     <!-- Preloader -->
@@ -105,32 +96,84 @@ if (isset($_GET['id'])) {
     >
       <div class="container my-auto">
         <div class="jumbotron_content">
-          <h1><?php echo $temp_object->name ?></h1>
+          <h1>Ask me whatever you want!</h1>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-8 m-auto section_area" id="portfolio_single_area">
-      <div class="portfolio-single-item">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 mb-5">
-              <h2>What We Do</h2>
-              <hr />
-              <p>
-                  <?php echo $temp_object->description ?>
-              </p>
 
-              <a class="btn btn-primary btn-lg" href="#">View Live</a>
+
+
+    <div class="container contact-form animated bounce">
+      <div class="contact-image">
+        <img
+          src="https://image.ibb.co/kUagtU/rocket_contact.png"
+          alt="rocket_contact"
+        />
+      </div>
+      <form method="POST" id="contact_form">
+        <h3>Drop Us a Message</h3>
+        <input type="hidden" class="valid" name="action" id="action" value="send_email" />
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left-inner-addon input-container">
+              <i class="fa fa-user"></i>
+              <input
+                type="text"
+                name="txtName"
+                id="txtName"
+                class="form-control"
+                placeholder="Subject"
+              />
+              <span class="input_err"><sup>*</sup>This field is requiered!</span>
             </div>
+            <div class="left-inner-addon input-container">
+              <i class="fa fa-envelope-o"></i>
+              <input
+                type="text"
+                name="txtEmail"
+                id="txtEmail"
+                class="form-control"
+                placeholder="Your Email"
+              />
+              <span class="input_err"><sup>*</sup>Enter valid email!</span>
+            </div>
+            <div class="left-inner-addon input-container">
+              <i class="fa fa-phone"></i>
 
+              <input
+                type="text"
+                name="txtPhone"
+                id="txtPhone"
+                class="form-control"
+                placeholder="Your Phone Number"
+              />
+              <span class="input_err"><sup>*</sup>Enter valid phone number!</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-inner-addon input-container">
+              <textarea
+                style="line-height: 2; padding-top: 10px;"
+                name="txtMsg"
+                id="txtMsg"
+                rows="5"
+                class="form-control"
+                placeholder="Your Message"
+              ></textarea>
+              <span class="input_err"><sup>*</sup>This field requiere at least 10 chars!</span>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
+      <div class="col-md-12 mt-5 text-center">
+            <button id="submit_btn" class="ladda-button btn btn-primary js-expand-right" data-style="expand-right">
+              <span class="ladda-label">SEND MESSAGE</span>
+            </button>
+          </div>
     </div>
 
     <footer class="site_footer">
-
       <div class="container">
         <div class="row mb-5 main_footer">
           <div class="col-6 col-md-6 col-lg-3 mb-4 mb-md-0">
@@ -173,9 +216,17 @@ if (isset($_GET['id'])) {
         <div class="container">
           <div class="row text-center">
             <div class="col-md-12">
-              <p class="copyright"><small class="block">
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made by <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://anismedia.com" target="_blank" >AnisMedia</a>
-              </small></p>
+              <p class="copyright">
+                <small class="block">
+                  Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | made by
+                  <i class="icon-heart text-danger" aria-hidden="true"></i> by
+                  <a href="https://anismedia.com" target="_blank">AnisMedia</a>
+                </small>
+              </p>
             </div>
           </div>
         </div>
@@ -183,16 +234,20 @@ if (isset($_GET['id'])) {
     </footer>
 
     <a href="#top" id="back_top">
-        <i class="icon-angle-up"></i>
+      <i class="icon-angle-up"></i>
     </a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
-    <script src="https://rawgithub.com/markdalgleish/stellar.js/master/jquery.stellar.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.7/spin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.7/ladda.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.7/ladda.jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+
   </body>
 </html>

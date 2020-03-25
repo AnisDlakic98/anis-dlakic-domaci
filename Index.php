@@ -1,4 +1,4 @@
-<?php require_once "api.php"; ?>
+<?php require_once "api.php";?>
 
 
 <!DOCTYPE html>
@@ -19,16 +19,23 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css">
   </head>
 
   <body id="top">
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+
     <!-- Navbar-->
     <header class="header">
       <nav class="navbar navbar-expand-lg fixed-top py-3">
         <div class="container">
-          <a href="#top" class="navbar-brand">anis<span>dlakic</span></a>
+          <a href="#top" class="navbar-brand" id="navbar-brand">anis<span>dlakic</span></a>
           <button
             type="button"
             data-toggle="collapse"
@@ -79,7 +86,7 @@
         <div class="jumbotron_content">
           <div class="promo-block-divider">
             <h1 class="promo-block-title">Anis<br />Dlakic</h1>
-            <p class="promo-block-text">Pool Player & Enterpreneur</p>
+            <p class="promo-block-text">I'm a <span class="typed"></span></p>
           </div>
           <ul class="list-inline">
             <li>
@@ -120,6 +127,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 col-lg-5">
+            <div class="main_about hidden">
             <p>
               I am Professional Graphic designer and Web Developer provides the
               best afford to make you happy. best ipsum dolor sit amet,
@@ -131,9 +139,10 @@
               afford to ake you happy. best ipsum dolor sit amet, constetur
               adipiscing elit, sed usmod tempor incididunt ut labore et dolore
             </p>
+            </div>
           </div>
           <div class="col-md-12 col-lg-7 pl-5">
-            <div class="about_personal_info">
+            <div class="about_personal_info hidden">
               <h4>PERSONAL INFORMATION</h4>
               <div class="d-flex justify-content-between">
                 <ul>
@@ -165,7 +174,7 @@
         </div>
       </div>
       <div class="container">
-        <div class="row" id="skill_list">
+        <div class="row hidden" id="skill_list">
         </div>
       </div>
     </section>
@@ -183,22 +192,22 @@
 
         <div class="row justify-content-center mb-5">
           <div id="filters" class="filters text-center button-group col-md-7">
-              <button class="btn btn-primary active" data-filter="*"><span>All</span></button>
+              <button class="btn btn-skew active" data-filter="*"><span>All</span></button>
               <?php
 
-              foreach ($categories as $category){
-                  echo '<button class="btn btn-primary mr-1" data-filter="'. '.'.$category.'"><span>'.$category.'</span></button>';
-              }
+foreach ($categories as $category) {
+    echo '<button class="btn btn-skew mr-1" data-filter="' . '.' . $category . '"><span>' . $category . '</span></button>';
+}
 
-              ?>
+?>
           </div>
-        </div>  
-        
+        </div>
+
         <div id="posts" class="row no-gutter">
 
         <?php
 
-        foreach ($work as $temp){ ?>
+foreach ($work as $temp) {?>
 
           <div class="item <?php echo $temp->category ?> col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-4">
             <a href="portfolio-single.php<?php echo "?id=" . $temp->id ?>" class="item-wrap">
@@ -207,7 +216,7 @@
             </a>
           </div>
 
-        <?php } ?>
+        <?php }?>
 
         </div>
       </div>
@@ -221,7 +230,7 @@
             <h2>HAVE YOU ANY PROJECT ! TELL ME
               ABOUT YOUR PROJECT AND LETS START
               </h2>
-              <button class="btn btn-primary"><span>START PROJECT</span></button>
+              <a href="contact.php" class="btn btn-skew"><span>START PROJECT</span></a>
           </div>
         </div>
       </div>
@@ -280,11 +289,22 @@
       </div>
     </footer>
 
+    <a href="#top" id="back_top">
+        <i class="icon-angle-up"></i>
+    </a>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
     <script src="https://rawgithub.com/markdalgleish/stellar.js/master/jquery.stellar.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+
+
+    </script>
 
 </html>
