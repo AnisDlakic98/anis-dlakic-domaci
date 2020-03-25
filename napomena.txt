@@ -1,0 +1,13 @@
+Evo kratak izvjestaj:
+
+- Sto se tice dizajna, komponente sam nalazio na internetu i sam radio css.
+- Responsive je 100%.
+- Dinamicno se ocitavaju vjestine (MY SKILLS sekcija sa api-a, kroz js).
+- Isto tako i za galeriju koja se dinamicno filttrira po kategorijama (MY WORK sekcija), samo sto sam odradio to preko php-a.
+- Single page za svaki item iz galerije - dinamicno.
+
+Pluginovi:
+https://isotope.metafizzy.co/  za galeriju
+https://markdalgleish.com/projects/stellar.js/  parallax efekti
+
+Da sam imao dizajn, odradio bih sve za neka 2h (sve zavisi) :))
