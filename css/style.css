@@ -1,0 +1,584 @@
+/*
+-------------------------------------------
+File Name: style.css
+Created By: AnisMedia
+Website: Bookmark
+Version: 1.0
+------------------------------------------- 
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900&display=swap");
+
+/*
+-------------------------------------------
+GLOBAL 
+------------------------------------------- 
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-font: "Heebo", sans-serif;
+    --primary-color: #4e62d3;
+    --secondary-color: #fb5d5e;
+    --light-black: #989898;
+    --dark-black: #070a1d;
+    --light: #ffffff;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--light);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.btn {
+    font-family: var(--primary-font);
+    background-color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 400 !important;
+    text-transform: none !important;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+    padding: 15px 30px !important;
+    border: solid 2px var(--primary-color);
+    transition: all 0.4s ease;
+    -webkit-box-shadow: 0px 10px 23px -5px rgba(122, 122, 122, 1);
+    -moz-box-shadow: 0px 10px 23px -5px rgba(122, 122, 122, 1);
+    box-shadow: 0px 10px 23px -5px rgba(122, 122, 122, 1);
+}
+
+.btn.btn_secondary {
+    background-color: var(--secondary-color);
+    border: solid 2px var(--secondary-color);
+}
+
+.btn.btn_white {
+    background-color: white;
+    border: solid 2px white;
+    color: var(--dark-black) !important;
+}
+
+.btn:hover,
+.btn:focus {
+    background: transparent;
+    color: var(--primary-color) !important;
+}
+
+.btn.btn_secondary:hover,
+.btn.btn_secondary:focus {
+    color: var(--secondary-color) !important;
+}
+
+.btn.btn_white:hover,
+.btn.btn_white:focus {
+    color: var(--dark-black) !important;
+    border-color: var(--dark-black) !important;
+}
+
+.section_area {
+    padding-bottom: 120px;
+}
+
+.section_area.pt {
+    padding-top: 120px;
+}
+
+.title_bar p {
+    width: 600px;
+    margin: auto;
+}
+
+.pt-7 {
+    padding-top: 70px;
+}
+
+.container-fluid {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/*
+-------------------------------------------
+TYPOGRAPHY 
+------------------------------------------- 
+*/
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    color: var(--light-black);
+}
+
+
+/*
+-------------------------------------------
+NAVBAR 
+------------------------------------------- 
+*/
+
+.navbar {
+    transition: all 0.4s;
+    padding: 40px 0 !important;
+}
+
+.navbar .nav-item {
+    margin-left: 30px;
+}
+
+.navbar .nav-link {
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    font-weight: 400 !important;
+    letter-spacing: 1px;
+    color: #2d2d2d;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: var(--secondary-color);
+}
+
+.navbar.active {
+    background: #fff;
+    padding: 20px 0 !important;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {}
+
+.navbar .navbar-brand span {
+    color: var(--light-black);
+}
+
+.nav-link.btn {
+    margin-top: -3px !important;
+    text-transform: uppercase !important;
+    padding: 8px 30px !important;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+        padding: 20px 0 !important;
+    }
+}
+
+
+/*
+-------------------------------------------
+VECTOR SHAPES 
+------------------------------------------- 
+*/
+
+.outer_shape {
+    background: url(../images/sec_shape.png);
+    width: 600px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 150px;
+}
+
+.content_row {
+    width: 550px;
+}
+
+.outter_col {
+    flex-basis: 50%;
+}
+
+.outter_col_content {
+    flex-basis: 50%;
+    position: relative;
+    bottom: 100px;
+}
+
+.outer_shape1 {
+    background: url(../images/sec_shape1.png);
+    height: 400px;
+    width: 700px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.outer_shape1_svg {
+    width: 90%;
+    position: relative;
+    bottom: 200px;
+    left: 200px;
+}
+
+.inner_shape {
+    width: 600px;
+    position: relative;
+    bottom: 100px;
+    right: 200px;
+}
+
+.main_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left_side {
+    flex-basis: 50%;
+}
+
+.right_side {
+    flex-basis: 50%;
+    position: absolute;
+    right: 0;
+    order: 2;
+}
+
+.main_row_content h1 {
+    color: var(--dark-black);
+    text-transform: capitalize;
+}
+
+.main_row_content p {
+    color: var(--light-black);
+}
+
+#features .left_side {
+    order: 2;
+}
+
+#features .right_side {
+    order: 1;
+}
+
+.tab_shape {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+    height: 100vh;
+    background: url("../images/sec_shape1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.tab_shape img {
+    position: relative;
+    width: 75%;
+    height: auto;
+    bottom: 150px;
+    left: 300px;
+}
+
+.tab_col {
+    width: 30%;
+    margin-left: 5%;
+}
+
+
+/*
+-------------------------------------------
+JUMBOTRON 
+------------------------------------------- 
+*/
+
+#jumbotron {
+    height: 800px;
+    position: relative;
+}
+
+
+/*
+-------------------------------------------
+TABS 
+------------------------------------------- 
+*/
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: var(--secondary-color);
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+    color: #6f6f6f;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border-color: white white white;
+    border-bottom-color: #dee2e6;
+}
+
+.tab-pane {
+    padding-top: 250px;
+}
+
+
+/*
+-------------------------------------------
+CARDS 
+------------------------------------------- 
+*/
+
+.download_card {
+    padding: 60px 0;
+    position: relative;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 10px 24px -2px rgba(181, 181, 181, 1);
+    -moz-box-shadow: 0px 10px 24px -2px rgba(181, 181, 181, 1);
+    box-shadow: 0px 10px 24px -2px rgba(181, 181, 181, 1);
+}
+
+.download_card h5 {
+    padding-top: 40px;
+}
+
+.card_divider {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#download_section .col-lg-4:nth-child(2) .download_card {
+    top: 50px;
+}
+
+#download_section .col-lg-4:nth-child(3) .download_card {
+    top: 100px;
+}
+
+
+/*
+-------------------------------------------
+ACCORDION 
+------------------------------------------- 
+*/
+
+#accordionExample {
+    width: 100%;
+}
+
+.accordion .card {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.accordion .card h2 {
+    background: url(../images/arrow-142-24.ico) no-repeat calc(100% - 10px) center;
+    background-size: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--dark-black);
+}
+
+.accordion .card p {
+    color: #585858;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    margin-bottom: 0 !important;
+}
+
+.accordion .card-head {
+    border-bottom: 1px solid #dedede;
+    padding: 20px 0;
+}
+
+.accordion .card h2.collapsed {
+    background-image: url(../images/icon-arrow.svg);
+}
+
+.accordion .card-body {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+
+/*
+-------------------------------------------
+FOOTER 
+------------------------------------------- 
+*/
+
+.footer {
+    background: #212958;
+    padding: 20px 0;
+}
+
+.footer_logo {
+    width: 170px;
+}
+
+.footer_links {
+    margin-top: 3px;
+    margin-left: 80px;
+}
+
+.footer_link {
+    margin-right: 40px;
+}
+
+.footer_link a {
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    font-weight: 400 !important;
+    letter-spacing: 1px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.footer_link a:hover,
+.footer_link a:focus {
+    color: var(--secondary-color);
+}
+
+.footer_social li {
+    margin-left: 30px;
+}
+
+#footer_logo path {
+    fill: #ffffff;
+}
+
+.social_icon path {
+    transition: 0.3s ease;
+}
+
+.social_icon:hover path,
+.social_icon:focus path {
+    fill: var(--secondary-color);
+}
+
+#contact {
+    background: var(--primary-color);
+}
+
+.contact_header h6 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.contact_header h2 {
+    color: white;
+    margin-top: 40px;
+}
+
+#contact_form .form-control {
+    padding: 13.5px 20px !important;
+    border: solid 2px white;
+    widows: 100%;
+}
+
+#contact_form .btn:hover,
+#contact_form .btn:focus {
+    background: white;
+}
+
+.input_err {
+    opacity: 0;
+    display: block;
+    background-color: var(--secondary-color);
+    width: 100%;
+    color: #ffffff;
+    font-style: italic;
+    font-weight: 500;
+    padding: 3px 20px;
+    text-align: left;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.input_err.error_show {
+    opacity: 1;
+}
+
+.w-70 {
+    width: 70% !important;
+}
+
+/*
+-------------------------------------------
+HAMBURGER ANIMATION 
+------------------------------------------- 
+*/
+
+#hamburger {
+    outline: none;
+}
+
+#hamburger .line {
+    width: 40px;
+    height: 3px;
+    background-color: var(--dark-black);
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+#hamburger.is-active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger.is-active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#hamburger.is-active .line:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
