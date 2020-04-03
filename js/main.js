@@ -22,10 +22,10 @@ validateInput = (input, regex, length) => {
   });
 };
 
-
 /*--------------------------------------------------------------------------------------------
   document.ready ALL FUNCTION START
 ---------------------------------------------------------------------------------------------*/ 
+
 (function($) {
   "use strict";
 
@@ -34,6 +34,7 @@ validateInput = (input, regex, length) => {
   validateInput("email", emailRe, false);
 
   //________Validate ALl Form Fields________//
+
   function validateAll() {
       var form_data = $("#contact_form").serializeArray();
       var error_free = true;
@@ -65,19 +66,40 @@ validateInput = (input, regex, length) => {
       }
   }
 
+  //________Submit Form________//
+
   $('#submit_btn').on('click', function (e) {
       e.preventDefault();
       validateAll();
   });
 
+  var nav = $('#nav_bar');
 
+  //________Fixed Navigation________//
 
-  $('#hamburger').click(function() {
-     $('.navbar-expand-lg').toggleClass('opened');
-   $(this).toggleClass("is-active");
-});
+  $(window).on('scroll', function() {
+    var scroll = $(window).scrollTop();
 
-  
+    if (scroll >= 50) {
+      $('#header').addClass('fixed');
+    } else {
+      $('#header').removeClass('fixed');
+    }
+  });
+
+  //________Mobile Navigation________//
+
+  $('.nav-toggle').on('click', function() {
+      $(this).toggleClass('close-nav');
+      nav.toggleClass('open');
+      $('#header .logo').toggleClass('active');
+      $('body').toggleClass('no-scroll');
+      return false;
+  }); 
+  nav.find('a').on('click', function() {
+      $('.nav-toggle').toggleClass('close-nav');
+      nav.toggleClass('open');
+  });
 
 })(jQuery);
 
