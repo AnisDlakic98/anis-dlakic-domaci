@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap");
+
+body {
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: $font_stack_1;
+    font-weight: map-get($font-weights, extra-light);
+    font-size: 38px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.d-flex {
+    display: flex;
+}

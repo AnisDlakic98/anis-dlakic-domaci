@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+    <!--<![endif]-->
+
+    <head>
+        <!-- Basic -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- Mobile Meta -->
+        <meta
+            name="viewport"
+            content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+
+        <!-- Site Meta -->
+        <title>BoostMeUp | Početna</title>
+        <link rel="icon" href="" />
+        <meta name="keywords" content="challange, design, amplitudo" />
+        <meta name="description" content="Design challange by Amplitudo" />
+        <meta name="author" content="Anis Dlakic" />
+
+        <!-- Site Icons -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <!-- Theme Style -->
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body class="">
+        <div class="wrapper">
+            <button
+                type="button"
+                class="btn btn_primary"
+                id="prevBtn"
+                onclick="nextPrev(-1)"
+            >
+                <img src="img/arrow-left.svg" alt="" /> Nazad
+            </button>
+            <div class="wrapper__bg"></div>
+            <div class="wrapper_logo">
+                <img src="img/logo.svg" class="main__logo" alt="" />
+            </div>
+            <section class="register">
+                <div class="main__slide">
+                    <div class="container text-center">
+                        <div class="main__slide__content">
+                            <h2>
+                                Mi smo predakceleracijski program koji vam
+                                pomaže da od vaše ideje napravite uspješan
+                                startup.
+                            </h2>
+                            <div>
+                                <a href="#" class="btn btn_transparent"
+                                    >OPŠIRNIJE</a
+                                >
+                            </div>
+                            <a href="#" id="run_form" class="btn btn_primary"
+                                >Prijavi se</a
+                            >
+                        </div>
+                        <div class="main__slide__footer">
+                            <div class="partners">
+                                <a href="#" target="_blank">
+                                    <img
+                                        src="img/partners/1.png"
+                                        alt="partner_logo"
+                                    />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img
+                                        src="img/partners/2.png"
+                                        alt="partner_logo"
+                                    />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img
+                                        src="img/partners/3.png"
+                                        alt="partner_logo"
+                                    />
+                                </a>
+                            </div>
+                            <div class="main_footer">
+                                <div class="info">
+                                    <h3>Podržano od</h3>
+                                    <img
+                                        src="img/goverment.svg"
+                                        alt="footer_logo"
+                                    />
+                                    <h3>Crna Gora Ministarstvo Nauke</h3>
+                                </div>
+                                <div class="social">
+                                    <ul>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" target="_blank">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="multi__step">
+                    <form id="regForm" class="multi_step_form">
+                        <div class="tab">
+                            <h1>Recite nam malo više o vašoj ideji</h1>
+                            <div class="form-group">
+                                <label for="projectName">Naziv projekta</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Naziv projekta"
+                                    name="projectName"
+                                    id="projectName"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="shortDescIdea"
+                                    >Kratak opis ideje (max 150
+                                    karaktera)</label
+                                >
+                                <textarea
+                                    name="shortDescIdea"
+                                    id="shortDescIdea"
+                                    rows="10"
+                                    placeholder="Opis ideje"
+                                ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="elaborationIdea"
+                                    >Elaboracija ideje (max 2000
+                                    karaktera)</label
+                                >
+                                <textarea
+                                    name="elaborationIdea"
+                                    id="elaborationIdea"
+                                    rows="15"
+                                    placeholder="Elaboracija ideje"
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <h1>
+                                Sad je red da se bolje upoznamo :) Upišite imena
+                                članova kao i njihovu kratku biografiju
+                            </h1>
+                            <div class="form-group">
+                                <label for="projectName">Naziv projekta</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Naziv projekta"
+                                    name="projectName"
+                                    id="projectName"
+                                />
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <h1>
+                                Još malo i gotovo :) Uploadujte PowerPoint
+                                prezentaciju i kratak video klip koji
+                                predstavlja vaš projekat
+                            </h1>
+                            <div class="form-group">
+                                <label for="projectName">Naziv projekta</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Naziv projekta"
+                                    name="projectName"
+                                    id="projectName"
+                                />
+                            </div>
+                        </div>
+                        <div class="tab">e</div>
+                        <div class="text-center d-flex">
+                            <div id="current_step">1</div>
+                            <button
+                                type="button"
+                                id="nextBtn"
+                                class="btn btn_primary"
+                                onclick="nextPrev(1)"
+                            >
+                                Dalje
+                            </button>
+                        </div>
+                        <!-- Circles which indicates the steps of the form: -->
+                        <div class="steps">
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                            <span class="step"></span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <img src="img/multistep/rocket.svg" id="rocket" alt="" />
+        <!-- JS Files Here -->
+        <script src="js/main.js"></script>
+        <script src="js/validation.js"></script>
+    </body>
+</html>

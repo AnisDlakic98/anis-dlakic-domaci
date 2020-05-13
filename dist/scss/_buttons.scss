@@ -1,0 +1,33 @@
+/*
+-------------------------------------------
+BUTTONS
+-------------------------------------------
+*/
+
+.btn {
+    transition: 0.4s;
+    border-radius: 35px;
+    padding: 16px 85px;
+    font-size: 18px;
+    outline: none !important;
+    font-family: $font_stack_1;
+    font-weight: map-get($font-weights, medium);
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    &#{&}_primary {
+        background: transparent;
+        color: $white;
+        border: solid 2px $white;
+        &:hover {
+            color: $primary-color;
+            background: $white;
+        }
+    }
+    &#{&}_transparent {
+        font-size: 24px;
+        text-decoration: underline;
+        padding: 0;
+        color: $white;
+    }
+}

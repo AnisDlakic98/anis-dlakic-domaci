@@ -1,0 +1,442 @@
+/*
+-------------------------------------------
+File Name: main.scss
+Created By: Anis Dlakic
+Website: BoostMeUp
+Version: 1.0
+-------------------------------------------
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap");
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 38px;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+/*
+-------------------------------------------
+BUTTONS
+-------------------------------------------
+*/
+.btn {
+  transition: 0.4s;
+  border-radius: 35px;
+  padding: 16px 85px;
+  font-size: 18px;
+  outline: none !important;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn.btn_primary {
+  background: transparent;
+  color: #ffff;
+  border: solid 2px #ffff;
+}
+
+.btn.btn_primary:hover {
+  color: #96074e;
+  background: #ffff;
+}
+
+.btn.btn_transparent {
+  font-size: 24px;
+  text-decoration: underline;
+  padding: 0;
+  color: #ffff;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  background: url(../img/multistep/bg.svg);
+  transition: 0.7s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body::after {
+  content: "";
+  background: url("../img/multistep/mask_2.svg");
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll !important;
+  position: absolute;
+  z-index: 1;
+}
+
+.wrapper .wrapper_logo {
+  text-align: center;
+  position: relative;
+  top: 70px;
+  transition: 0.7s;
+}
+
+.wrapper .wrapper_logo img {
+  width: 526px;
+  height: 140px;
+  transition: 0.7s;
+}
+
+.wrapper .main__slide {
+  position: relative;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.wrapper .main__slide__content h2 {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 112px;
+  line-height: 48px;
+}
+
+.wrapper .main__slide__content div {
+  margin-top: 29px;
+  margin-bottom: 75px;
+}
+
+.wrapper .main__slide__footer {
+  position: relative;
+  top: 0px;
+}
+
+.wrapper .main__slide__footer .partners {
+  display: inline-block;
+  margin-top: 120px;
+}
+
+.wrapper .main__slide__footer .partners a {
+  margin: 0 30px;
+}
+
+.wrapper .main__slide__footer .partners a:nth-child(1) img {
+  width: 8.95vw !important;
+  min-width: 132px;
+  height: auto;
+}
+
+.wrapper .main__slide__footer .partners a:nth-child(2) img {
+  width: 8.33vw !important;
+  min-width: 120px;
+  height: auto;
+}
+
+.wrapper .main__slide__footer .partners a:nth-child(3) img {
+  width: 9.94vw !important;
+  min-width: 151px;
+  height: auto;
+  position: relative;
+  top: -10px;
+}
+
+.wrapper .main__slide__footer .partners img {
+  width: 15%;
+}
+
+.main_footer .info {
+  margin-top: 20px;
+  display: inline-flex;
+}
+
+.main_footer .info img {
+  margin: 0 30px;
+}
+
+.main_footer .social {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.main_footer .social ul {
+  display: inline-flex;
+}
+
+.main_footer .social ul li {
+  margin: 0 10px;
+}
+
+.main_footer .social ul li a {
+  width: 40px;
+  height: 40px;
+  line-height: 45px;
+  display: block;
+  background: #ffff;
+  border-radius: 50%;
+}
+
+.main_footer .social ul li a i {
+  font-size: 20px;
+  color: #791246;
+}
+
+.main_footer h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+  color: #ffff;
+}
+
+.main_footer h3:first-child {
+  margin-top: 40px;
+}
+
+.main_footer h3:last-child {
+  width: 220px;
+}
+
+body.active::before {
+  transform: scale(1.1);
+}
+
+body.active .main__slide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.active .multi__step {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+body.active .wrapper_logo {
+  top: 20px;
+}
+
+body.active .wrapper_logo img {
+  width: 346px;
+}
+
+.multi__step {
+  width: 100%;
+  height: 80vh;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  animation: fadeIn;
+  transition: 0.7s;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.multi_step_form {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.multi_step_form .d-flex {
+  justify-content: center;
+}
+
+.multi_step_form h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 38px;
+  font-weight: 300;
+  text-align: center;
+  color: #ffff;
+  margin-top: 0;
+}
+
+.multi_step_form .form-group {
+  margin-top: 20px;
+}
+
+.multi_step_form .form-group label {
+  display: block;
+  color: #ffff;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin-bottom: 17px;
+}
+
+.multi_step_form .form-group .form-control {
+  height: 60px;
+}
+
+.multi_step_form .form-group textarea {
+  padding-top: 25px;
+}
+
+.multi_step_form .form-group .form-control,
+.multi_step_form .form-group textarea {
+  width: 100%;
+  background: #ffffff24;
+  box-shadow: 0px 0px 5px #e879db;
+  border: none;
+  padding-left: 20px;
+  border-radius: 8px;
+  opacity: 1;
+  color: #ffff;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.multi_step_form .form-group .form-control::-webkit-input-placeholder,
+.multi_step_form .form-group textarea::-webkit-input-placeholder {
+  color: #ffff;
+}
+
+.multi_step_form .form-group .form-control:-moz-placeholder,
+.multi_step_form .form-group textarea:-moz-placeholder {
+  color: #ffff;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+#nextBtn {
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#prevBtn {
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  border: none;
+  z-index: 1;
+}
+
+#prevBtn:hover {
+  color: #ffff;
+  background: transparent;
+}
+
+#prevBtn img {
+  margin-right: 10px;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4caf50;
+}
+
+#current_step {
+  width: 57px;
+  height: 57px;
+  line-height: 57px;
+  border: solid 2px #ffff;
+  border-radius: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #ffff;
+  font-weight: 400;
+  margin-top: 19px;
+  margin-right: 10px;
+}
+
+.steps {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0;
+}
+
+#rocket {
+  z-index: 1;
+  position: absolute;
+  bottom: -250px;
+  right: 17rem;
+  opacity: 0;
+  transition: 1s;
+}
+
+#rocket.active {
+  opacity: 0.4;
+}
+
+#rocket.one {
+  bottom: 170px;
+  opacity: 0.7;
+}
+
+#rocket.two {
+  top: 0;
+  opacity: 1;
+}
+/*# sourceMappingURL=main.css.map */
