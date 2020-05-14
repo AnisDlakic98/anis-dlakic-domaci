@@ -71,18 +71,21 @@
                                     <img
                                         src="img/partners/1.png"
                                         alt="partner_logo"
+                                        id="tehnopolis"
                                     />
                                 </a>
                                 <a href="#" target="_blank">
                                     <img
                                         src="img/partners/2.png"
                                         alt="partner_logo"
+                                        id="ntppark"
                                     />
                                 </a>
                                 <a href="#" target="_blank">
                                     <img
                                         src="img/partners/3.png"
                                         alt="partner_logo"
+                                        id="amplitudo"
                                     />
                                 </a>
                             </div>
@@ -146,7 +149,7 @@
                                 <textarea
                                     name="shortDescIdea"
                                     id="shortDescIdea"
-                                    rows="10"
+                                    rows="7"
                                     placeholder="Opis ideje"
                                 ></textarea>
                             </div>
@@ -168,15 +171,36 @@
                                 Sad je red da se bolje upoznamo :) Upišite imena
                                 članova kao i njihovu kratku biografiju
                             </h1>
+                            <div id="articles">
+                                <div id="inputGroup1" class="inputGroup">
+                                    <div class="form-group">
+                                        <label for="projectName">Član 1</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Ime i prezime"
+                                            name="projectName"
+                                            id="projectName"
+                                        />
+                                    </div>
+                                    <div class="form-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Kratka biografija (max 150 karaktera)"
+                                            name="biographyOne"
+                                            id="biographyOne"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <label for="projectName">Naziv projekta</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    placeholder="Naziv projekta"
-                                    name="projectName"
-                                    id="projectName"
-                                />
+                                <button
+                                    class="btn btn_primary"
+                                    id="addArticleBtn"
+                                >
+                                    <i class="fa fa-plus"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="tab">
@@ -196,7 +220,47 @@
                                 />
                             </div>
                         </div>
-                        <div class="tab">e</div>
+                        <div class="tab pt-60">
+                            <h1>Uspješna prijava!</h1>
+                            <p>
+                                Lorem ipsum, or lipsum as it is sometimes known,
+                                is dummy text used in laying out print, graphic
+                                or web designs. The passage is attributed to an
+                                unknown typesetter in the 15th century who is
+                                thought to have scrambled parts of Cicero's De
+                                Finibus Bonorum et Malorum for use in a type
+                                specimen book.
+                            </p>
+                            <a
+                                href=""
+                                class="btn btn_primary dark"
+                                id="toHomePage"
+                                >U redu</a
+                            >
+                            <div class="partners dark">
+                                <a href="#" target="_blank">
+                                    <img
+                                        src="img/partners/1-1.png"
+                                        alt="partner_logo"
+                                        id="tehnopolis"
+                                    />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img
+                                        src="img/partners/2-1.png"
+                                        alt="partner_logo"
+                                        id="ntppark"
+                                    />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img
+                                        src="img/partners/3-1.svg"
+                                        alt="partner_logo"
+                                        id="amplitudo"
+                                    />
+                                </a>
+                            </div>
+                        </div>
                         <div class="text-center d-flex">
                             <div id="current_step">1</div>
                             <button
@@ -220,6 +284,10 @@
             </section>
         </div>
         <img src="img/multistep/rocket.svg" id="rocket" alt="" />
+        <div class="dark_icons">
+            <img src="img/multistep/final2.svg" class="left" alt="" />
+            <img src="img/multistep/final1.svg" class="right" alt="" />
+        </div>
         <!-- JS Files Here -->
         <script src="js/main.js"></script>
         <script src="js/validation.js"></script>
