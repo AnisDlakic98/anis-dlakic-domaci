@@ -13,6 +13,9 @@ const articles = document.querySelector("#articles");
 const animations = ["animated", "slideInUp"];
 const animations1 = ["animated", "bounceInLeft"];
 
+var tempArticle = 1;
+var max = 5;
+
 //________after DOM is loaded________//
 document.addEventListener("DOMContentLoaded", () => {
     runFormBtn.addEventListener("click", (event) => {
@@ -26,28 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
         location.reload();
     });
 
-    var tempArticle = 1;
-    var max = 2;
-
     addArticleBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        console.log(tempArticle);
 
         tempArticle++;
+
+        if (articles.children.length < max) {
+            addArticleBtn.disabled = false;
+        }
+
         if (tempArticle > max) {
-            tempArticle = 1;
+            addArticleBtn.disabled = true;
             return;
         }
-        addArticleBtn.style.display = "block";
-        articles.innerHTML += `<div id="inputGroup1" class="inputGroup">
+        addArticleBtn.disabled = false;
+        articles.innerHTML += `<div id="inputGroup${tempArticle}" class="inputGroup">
         <div class="form-group">
-            <label for="projectName">Član ${tempArticle}</label>
+            <div class="d-flex justify-content-between">
+                <label for="article${tempArticle}">Član ${tempArticle}</label>
+                <i class="fa fa-times-circle remove" id="${tempArticle}"></i>
+            </div>
             <input
                 type="text"
                 class="form-control"
                 placeholder="Ime i prezime"
-                name="projectName"
-                id="projectName"
+                name="article${tempArticle}"
+                id="article${tempArticle}"
             />
         </div>
         <div class="form-group">
@@ -55,12 +62,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 type="text"
                 class="form-control"
                 placeholder="Kratka biografija (max 150 karaktera)"
-                name="biographyOne"
-                id="biographyOne"
+                name="biography${tempArticle}"
+                id="biography${tempArticle}"
             />
         </div>
     </div>`;
     });
+});
+
+body.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove")) {
+        articles.removeChild(articles.lastElementChild);
+        tempArticle--;
+    }
 });
 
 var addRule = (function (style) {
@@ -167,7 +181,7 @@ function validateForm() {
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
         // If a field is empty...
-        if (y[i].value == "") {
+        if (y[i].value !== "") {
             // add an "invalid" class to the field:
             y[i].className += " invalid";
             // and set the current valid status to false

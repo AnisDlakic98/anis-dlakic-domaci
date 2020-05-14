@@ -14,6 +14,11 @@
     }
     .form-group {
         margin-top: 20px;
+        .upload_wrapper {
+            border: 1px dashed #ffffff;
+            height: 60px;
+            border-radius: 8px;
+        }
         label {
             display: block;
             color: $white;

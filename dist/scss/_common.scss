@@ -30,6 +30,19 @@ h2 {
 
 .d-flex {
     display: flex;
+    &.justify-content-between {
+        justify-content: space-between !important;
+    }
+}
+
+.remove {
+    font-size: 20px;
+    color: #ffff;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 .pt-60 {
