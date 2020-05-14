@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+window.addEventListener("resize", function () {
+    // alert(this.innerHeight);
+    document.documentElement.style.setProperty("--screen-y", this.innerHeight);
+});
+
+// document.addEventListener("resize", () => {});
+
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
