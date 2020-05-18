@@ -11,6 +11,7 @@
         text-align: center;
         color: $white;
         margin-top: 0;
+        margin-bottom: 60px !important;
     }
     .form-group {
         .input_msg {
@@ -122,9 +123,6 @@
 }
 
 /* Mark input boxes that gets an error on validation: */
-input.invalid {
-    background-color: #ffdddd;
-}
 
 /* Hide all steps by default: */
 .tab {
@@ -198,7 +196,7 @@ input.invalid {
 #rocket {
     z-index: 1;
     position: absolute;
-    right: 15rem;
+    right: 0;
     opacity: 0;
     transition: 1s;
     &.active {

@@ -15,10 +15,19 @@ const animations = ["animated", "slideInUp"];
 const animations1 = ["animated", "bounceInLeft"];
 
 var tempArticle = 1;
-var max = 5;
+var max = 3;
+var limit = false;
 
 //________after DOM is loaded________//
 document.addEventListener("DOMContentLoaded", () => {
+    const urlRegex = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    validateInput("projectName", false, 50);
+    validateInput("shortDescIdea", false, 150);
+    validateInput("elaborationIdea", false, 2000);
+    validateInput(`article1`, false, 50);
+    validateInput(`biography1`, false, 150);
+    validateInput(`video`, urlRegex, 150);
+
     runFormBtn.addEventListener("click", (event) => {
         event.preventDefault();
         body.classList.add("active");
@@ -30,57 +39,68 @@ document.addEventListener("DOMContentLoaded", () => {
         location.reload();
     });
 
-    selectedFile.oninput = () => {
-        selectedFile.classList.add("active");
+    selectedFile.oninput = (event) => {
+        if (event.target.id == "selectedFile") {
+            selectedFile.classList.add("active");
+            validateFile("selectedFile");
+        }
     };
 
     addArticleBtn.addEventListener("click", (event) => {
         event.preventDefault();
 
-        tempArticle++;
-
-        if (articles.children.length < max) {
-            addArticleBtn.disabled = false;
-        }
-
-        if (tempArticle > max) {
-            addArticleBtn.disabled = true;
+        if (limit) {
             return;
         }
-        addArticleBtn.disabled = false;
-        articles.innerHTML += `<div id="inputGroup${tempArticle}" class="inputGroup">
-        <div class="form-group">
-            <div class="d-flex justify-content-between">
-                <label for="article${tempArticle}">Član ${tempArticle}</label>
-                <i class="fa fa-times-circle remove" id="${tempArticle}"></i>
-            </div>
-            <input
-                type="text"
-                class="form-control"
-                placeholder="Ime i prezime"
-                name="article${tempArticle}"
-                id="article${tempArticle}"
-            />
-            <span class="input_msg">Ime I prezime 2 – 50 karaktera</span>
-        </div>
-        <div class="form-group">
-            <input
-                type="text"
-                class="form-control"
-                placeholder="Kratka biografija (max 150 karaktera)"
-                name="biography${tempArticle}"
-                id="biography${tempArticle}"
-            />
-            <span class="input_msg">Kratka biografija 2 – 150 karaktera</span>
-        </div>
-    </div>`;
+        tempArticle++;
+        var newNode = document.createElement("div");
+        newNode.className = "inputGroup";
+        newNode.id = `inputGroup${tempArticle}`;
+        newNode.innerHTML = `
+                <div class="form-group">
+                    <div class="d-flex justify-content-between">
+                        <label for="article${tempArticle}">Član ${tempArticle}</label>
+                        <i class="fa fa-times-circle remove" id="${tempArticle}"></i>
+                    </div>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Ime i prezime"
+                        name="article${tempArticle}"
+                        id="article${tempArticle}"
+                    />
+                    <span class="input_msg">Ime I prezime 2 – 50 karaktera</span>
+                </div>
+                <div class="form-group">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Kratka biografija (max 150 karaktera)"
+                        name="biography${tempArticle}"
+                        id="biography${tempArticle}"
+                    />
+                    <span class="input_msg">Kratka biografija 2 – 150 karaktera</span>
+                </div>
+            `;
+        articles.appendChild(newNode);
+        validateInput(`article${tempArticle}`, false, 2000);
+        validateInput(`biography${tempArticle}`, false, 2000);
+        if (tempArticle == max) {
+            limit = true;
+        } else {
+            limit = false;
+        }
     });
 });
 
 body.addEventListener("click", function (event) {
     if (event.target.classList.contains("remove")) {
-        articles.removeChild(articles.lastElementChild);
         tempArticle--;
+        articles.removeChild(articles.lastElementChild);
+
+        if (articles.children.length == 1) {
+            limit = false;
+        }
     }
 });
 
@@ -162,9 +182,10 @@ function nextPrev(n) {
     if (n == 1 && !validateForm()) return false;
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
+    if (currentTab == x.length - 1) {
+        submitForm();
+    }
     if (currentTab >= x.length) {
-        // ... the form gets submitted:
-        document.getElementById("regForm").submit();
         return false;
     }
     // Otherwise, display the correct tab:
@@ -182,17 +203,92 @@ function validateForm() {
     x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByClassName("form-input");
     for (i = 0; i < y.length; i++) {
-        console.log(y[i].value);
-
         if (y[i].classList.contains("valid")) {
             valid = true;
         } else {
             valid = false;
         }
     }
-    // if (valid) {
-    //     document.getElementsByClassName("step")[currentTab].className +=
-    //         " finish";
-    // }
     return valid;
+}
+
+/*  -----------------------------------------------------------
+    UNIVERSAL FUNCTIONS START 
+----------------------------------------------------------- */
+
+function submitForm() {
+    var form_data = document.querySelector(".multi_step_form").elements;
+    console.log(form_data);
+
+    var listItems = "";
+    for (var input in form_data) {
+        var element = document.getElementById(form_data[input]["name"]);
+        if (element != null && element.value != "undefined") {
+            console.log("value" + element.value + " - element: " + element);
+
+            listItems += `<li><b>${element.placeholder}: </b><span>${element.value}</span></li>`;
+        }
+    }
+    document.getElementById("formResults").innerHTML = listItems;
+}
+
+validateInput = (input, regex, length) => {
+    var inputObject = document.getElementById(input);
+    var validRegex = true;
+    inputObject.oninput = () => {
+        var is_input = inputObject.value;
+        var input_msg = inputObject.nextElementSibling;
+
+        if (regex != false) {
+            regex.test(inputObject.value)
+                ? (validRegex = true)
+                : (validRegex = false);
+        }
+        if (length != false) {
+            inputObject.value.length <= length && inputObject.value.length >= 2
+                ? (is_input = true)
+                : (is_input = false);
+        }
+
+        if (is_input && validRegex) {
+            inputObject.classList.remove("invalid");
+            inputObject.classList.add("valid");
+            input_msg.classList.remove("invalid");
+        } else {
+            inputObject.classList.remove("valid");
+            inputObject.classList.add("invalid");
+            input_msg.classList.add("invalid");
+        }
+    };
+};
+
+function validateFile(input) {
+    var inputObject = document.getElementById(input);
+    var is_input = inputObject.value;
+    var input_msg = document.getElementById("upload_msg");
+    if (is_input != "") {
+        var checkValue = inputObject.value.toLowerCase();
+        if (!checkValue.match(/(\.ppt|\.pptx)$/)) {
+            input_msg.classList.remove("valid");
+            input_msg.classList.add("invalid");
+            inputObject.classList.remove("valid");
+            inputObject.classList.add("invalid");
+            input_msg.innerHTML = "Dozvoljen upload fajlova .ppt i .pptx";
+            return false;
+        }
+        if (inputObject.files[0].size > 5000000) {
+            input_msg.classList.remove("valid");
+            input_msg.classList.add("invalid");
+            inputObject.classList.remove("valid");
+            inputObject.classList.add("invalid");
+            input_msg.innerHTML = "Dozvoljen upload fajlova veličine do 5MB";
+            return false;
+        }
+        input_msg.classList.remove("invalid");
+        input_msg.classList.add("valid");
+        inputObject.classList.remove("invalid");
+        inputObject.classList.add("valid");
+        input_msg.innerHTML = "";
+        return true;
+    }
 }

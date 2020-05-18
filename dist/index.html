@@ -128,7 +128,11 @@
                 </div>
 
                 <div class="multi__step">
-                    <form id="regForm" class="multi_step_form">
+                    <form
+                        id="regForm"
+                        class="multi_step_form"
+                        enctype="multipart/form-data"
+                    >
                         <div class="tab">
                             <h1>Recite nam malo više o vašoj ideji</h1>
 
@@ -207,10 +211,9 @@
                                             name="biography1"
                                             id="biography1"
                                         />
-                                        <span class="input_msg"
-                                            >Kratka biografija 2 – 150
-                                            karaktera</span
-                                        >
+                                        <span class="input_msg">
+                                            Kratka biografija 2 – 150 karaktera
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -218,6 +221,7 @@
                                 <button
                                     class="btn btn_primary"
                                     id="addArticleBtn"
+                                    name="addArticleBtn"
                                 >
                                     <i class="fa fa-plus"></i>
                                 </button>
@@ -243,8 +247,14 @@
                                         PREZENTACIJA<br />
                                         <span>max 8 slajdova</span>
                                     </label>
-                                    <input type="file" id="selectedFile" />
+                                    <input
+                                        type="file"
+                                        id="selectedFile"
+                                        placeholder="Prezentacija"
+                                        name="selectedFile"
+                                    />
                                 </div>
+                                <span class="input_msg" id="upload_msg"></span>
                             </div>
                             <div class="form-group">
                                 <label for="projectName">Video Link</label>
@@ -255,19 +265,23 @@
                                     name="video"
                                     id="video"
                                 />
+                                <span class="input_msg">
+                                    Url mora biti validan
+                                </span>
                             </div>
                         </div>
                         <div class="tab pt-60">
                             <h1>Uspješna prijava!</h1>
-                            <p>
-                                Lorem ipsum, or lipsum as it is sometimes known,
-                                is dummy text used in laying out print, graphic
-                                or web designs. The passage is attributed to an
-                                unknown typesetter in the 15th century who is
-                                thought to have scrambled parts of Cicero's De
-                                Finibus Bonorum et Malorum for use in a type
-                                specimen book.
-                            </p>
+                            <ul id="formResults">
+                                <li><b>Naziv projekta: </b><span></span></li>
+                                <li><b>Opis ideje: </b><span></span></li>
+                                <li><b>Elaboracija ideje: </b><span></span></li>
+                                <li><b>Ime i prezime: </b><span></span></li>
+                                <li><b>Kratka biografija: </b><span></span></li>
+                                <li><b>Prezentacija: </b><span></span></li>
+                                <li><b>Video link: </b><span></span></li>
+                            </ul>
+
                             <a
                                 href=""
                                 class="btn btn_primary dark"

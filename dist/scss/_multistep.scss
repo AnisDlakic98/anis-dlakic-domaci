@@ -66,13 +66,16 @@ body {
             h1 {
                 color: $secondary-color;
             }
+            #formResults {
+                li {
+                    color: $secondary-color;
+                    font-family: $font_stack_1;
+                    font-size: 17px;
+                    font-weight: map-get($font-weights, light);
+                    margin: 20px 0;
+                }
+            }
             p {
-                color: $secondary-color;
-                font-family: $font_stack_1;
-                font-size: 24px;
-                font-weight: map-get($font-weights, light);
-                line-height: 36px;
-                text-align: center;
             }
         }
     }
@@ -126,7 +129,7 @@ body {
     margin-top: 80px;
     a {
         img {
-            width: 10%;
+            width: 200px;
             padding: 0 30px;
         }
         &:nth-child(3) {
@@ -137,6 +140,7 @@ body {
         }
     }
     &.dark {
+        text-align: center;
         a {
             padding: 0;
             img {

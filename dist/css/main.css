@@ -177,13 +177,12 @@ body.finish .multi__step h1 {
   color: #092d5f;
 }
 
-body.finish .multi__step p {
+body.finish .multi__step #formResults li {
   color: #092d5f;
   font-family: "Roboto", sans-serif;
-  font-size: 24px;
+  font-size: 17px;
   font-weight: 300;
-  line-height: 36px;
-  text-align: center;
+  margin: 20px 0;
 }
 
 .wrapper {
@@ -238,13 +237,17 @@ body.finish .multi__step p {
 }
 
 .partners a img {
-  width: 10%;
+  width: 200px;
   padding: 0 30px;
 }
 
 .partners a:nth-child(3) img {
   position: relative;
   top: -12px;
+}
+
+.partners.dark {
+  text-align: center;
 }
 
 .partners.dark a {
@@ -378,6 +381,7 @@ body.active .wrapper_logo img {
   text-align: center;
   color: #ffff;
   margin-top: 0;
+  margin-bottom: 60px !important;
 }
 
 .multi_step_form .form-group {
@@ -500,10 +504,6 @@ body.active .wrapper_logo img {
 }
 
 /* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
-
 /* Hide all steps by default: */
 .tab {
   display: none;
@@ -578,7 +578,7 @@ input.invalid {
 #rocket {
   z-index: 1;
   position: absolute;
-  right: 15rem;
+  right: 0;
   opacity: 0;
   transition: 1s;
 }
@@ -672,5 +672,151 @@ input.invalid {
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
+}
+
+@media (max-width: 1044px) {
+  #rocket {
+    z-index: 1;
+  }
+  #rocket.active {
+    opacity: 0.4;
+  }
+  #rocket.one {
+    bottom: 5%;
+    opacity: 0.4;
+  }
+  #rocket.two {
+    bottom: 50%;
+    opacity: 0.4;
+  }
+  body.finish .dark_icons .left {
+    left: 0;
+  }
+  body.finish .dark_icons .right {
+    right: -23%;
+  }
+  .wrapper .wrapper_logo img {
+    width: 300px;
+  }
+  .main__slide__content h2 {
+    margin-top: 50px !important;
+  }
+  .multi_step_form {
+    width: 95%;
+  }
+  .multi_step_form h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body.active::before {
+    transform: scale(1.1);
+  }
+  body.active .main__slide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  body.active .multi__step {
+    height: 80vh;
+    opacity: 1;
+    pointer-events: visible;
+  }
+  body.active .wrapper_logo {
+    top: 20px;
+  }
+  body.active .wrapper_logo img {
+    width: 246px;
+  }
+  h2,
+  h1 {
+    width: 90% !important;
+    font-size: 30px !important;
+  }
+  .main_footer .social {
+    position: absolute;
+    right: 50%;
+    bottom: auto;
+    transform: translate(50%);
+  }
+  .main_footer .social ul {
+    padding: 0;
+  }
+  .main_footer h3 {
+    font-size: 20px;
+  }
+  .main_footer h3:first-child {
+    margin-top: 30px;
+  }
+  .btn {
+    padding: 15px 40px;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 878px) {
+  body.finish .wrapper_logo img {
+    width: 326px !important;
+  }
+  body.finish .wrapper_logo img #formResults li {
+    font-size: 17px !important;
+  }
+  body.finish .dark_icons .left {
+    top: 0 !important;
+    left: 0;
+  }
+  body.finish .dark_icons .right {
+    right: -260px;
+  }
+  #prevBtn {
+    top: 20px;
+    left: 20px;
+  }
+  .partners {
+    display: inline-block;
+    margin-top: 80px;
+  }
+  .partners a img {
+    width: 120px;
+    padding: 0 20px;
+  }
+  .partners a:nth-child(3) img {
+    position: relative;
+    top: -12px;
+  }
+}
+
+@media (max-width: 526px) {
+  .partners.dark a img {
+    width: 120px !important;
+  }
+  body.finish .dark_icons .left {
+    top: 0 !important;
+    left: 0;
+    width: 300px;
+  }
+  body.finish .dark_icons .right {
+    top: unset;
+    bottom: -400px;
+    right: -200px !important;
+  }
+  .multi_step_form label {
+    font-size: 14px !important;
+  }
+  .partners {
+    margin-bottom: 40px;
+  }
+  .partners a:nth-child(3) img {
+    width: 150px;
+    position: relative;
+    top: 20px;
+  }
+  .main_footer .info {
+    display: block;
+  }
+  .main_footer .info h3 {
+    text-align: center;
+  }
+  .main_footer .info h3:last-child {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
