@@ -384,10 +384,74 @@ body.active .wrapper_logo img {
   margin-top: 20px;
 }
 
-.multi_step_form .form-group .upload_wrapper {
+.multi_step_form .form-group .input_msg {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-top: 7px;
+  transition: 0.5s;
+  justify-content: flex-end;
+  display: none;
+}
+
+.multi_step_form .form-group .input_msg.invalid {
+  display: flex;
+  color: #ff4343;
+}
+
+.multi_step_form .form-group .uplaod_wrapper {
   border: 1px dashed #ffffff;
   height: 60px;
   border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  padding: 0 20px;
+}
+
+.multi_step_form .form-group .uplaod_wrapper label {
+  font-family: "Khula", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.multi_step_form .form-group .uplaod_wrapper label span {
+  font-size: 13px;
+  opacity: 0.56;
+}
+
+.multi_step_form .form-group .uplaod_wrapper input[type="file"] {
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer !important;
+  outline: none;
+  position: absolute;
+  top: 21px;
+  right: 15px;
+  font-family: "Khula", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffff;
+}
+
+.multi_step_form .form-group .uplaod_wrapper input[type="file"].active {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.multi_step_form .form-group .uplaod_wrapper input[type="file"]::-webkit-file-upload-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.multi_step_form .form-group .uplaod_wrapper input[type="file"]::-ms-browse {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .multi_step_form .form-group label {
@@ -569,6 +633,32 @@ input.invalid {
   to {
     transform: translate3d(0, 0, 0);
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
 }
 
 .slideInUp {

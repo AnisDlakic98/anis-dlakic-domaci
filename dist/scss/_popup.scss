@@ -13,12 +13,72 @@
         margin-top: 0;
     }
     .form-group {
+        .input_msg {
+            font-family: $font_stack_1;
+            font-size: 15px;
+            margin-top: 7px;
+            transition: 0.5s;
+            justify-content: flex-end;
+            display: none;
+            &.invalid {
+                display: flex;
+                color: #ff4343;
+            }
+        }
         margin-top: 20px;
-        .upload_wrapper {
+        .uplaod_wrapper {
             border: 1px dashed #ffffff;
             height: 60px;
             border-radius: 8px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            padding: 0 20px;
+
+            label {
+                font-family: $font_stack_2;
+                font-size: 15px;
+                font-weight: map-get($font-weights, bold);
+                line-height: 1.1;
+                margin-bottom: 0;
+                margin-left: 15px;
+                margin-top: 15px;
+                cursor: pointer;
+                span {
+                    font-size: 13px;
+                    opacity: 0.56;
+                }
+            }
+
+            input[type="file"] {
+                opacity: 0;
+                pointer-events: none;
+                &.active {
+                    opacity: 1;
+                    pointer-events: visible;
+                }
+                cursor: pointer !important;
+                outline: none;
+                position: absolute;
+                top: 21px;
+                right: 15px;
+                font-family: $font_stack_2;
+                font-size: 15px;
+                font-weight: map-get($font-weights, regular);
+                font-style: italic;
+                color: $white;
+                &::-webkit-file-upload-button {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                &::-ms-browse {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
         }
+
         label {
             display: block;
             color: $white;

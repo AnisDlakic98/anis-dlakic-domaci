@@ -9,6 +9,7 @@ const main__logo = document.querySelector(".main__logo");
 const toHomePage = document.querySelector("#toHomePage");
 const addArticleBtn = document.querySelector("#addArticleBtn");
 const articles = document.querySelector("#articles");
+const selectedFile = document.querySelector("#selectedFile");
 
 const animations = ["animated", "slideInUp"];
 const animations1 = ["animated", "bounceInLeft"];
@@ -28,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
         location.reload();
     });
+
+    selectedFile.oninput = () => {
+        selectedFile.classList.add("active");
+    };
 
     addArticleBtn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -56,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name="article${tempArticle}"
                 id="article${tempArticle}"
             />
+            <span class="input_msg">Ime I prezime 2 – 50 karaktera</span>
         </div>
         <div class="form-group">
             <input
@@ -65,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name="biography${tempArticle}"
                 id="biography${tempArticle}"
             />
+            <span class="input_msg">Kratka biografija 2 – 150 karaktera</span>
         </div>
     </div>`;
     });
@@ -100,11 +107,8 @@ var addRule = (function (style) {
 })(document.createElement("style"));
 
 window.addEventListener("resize", function () {
-    // alert(this.innerHeight);
     document.documentElement.style.setProperty("--screen-y", this.innerHeight);
 });
-
-// document.addEventListener("resize", () => {});
 
 var currentTab = 0;
 showTab(currentTab);
@@ -171,27 +175,24 @@ function nextPrev(n) {
 }
 
 function validateForm() {
-    // This function deals with validation of the form fields
     var x,
         y,
         i,
         valid = true;
     x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
-    // A loop that checks every input field in the current tab:
+    y = x[currentTab].getElementsByClassName("form-input");
     for (i = 0; i < y.length; i++) {
-        // If a field is empty...
-        if (y[i].value !== "") {
-            // add an "invalid" class to the field:
-            y[i].className += " invalid";
-            // and set the current valid status to false
+        console.log(y[i].value);
+
+        if (y[i].classList.contains("valid")) {
+            valid = true;
+        } else {
             valid = false;
         }
     }
-    // If the valid status is true, mark the step as finished and valid:
-    if (valid) {
-        document.getElementsByClassName("step")[currentTab].className +=
-            " finish";
-    }
-    return valid; // return the valid status
+    // if (valid) {
+    //     document.getElementsByClassName("step")[currentTab].className +=
+    //         " finish";
+    // }
+    return valid;
 }

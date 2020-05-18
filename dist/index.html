@@ -131,15 +131,19 @@
                     <form id="regForm" class="multi_step_form">
                         <div class="tab">
                             <h1>Recite nam malo više o vašoj ideji</h1>
+
                             <div class="form-group">
                                 <label for="projectName">Naziv projekta</label>
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    class="form-control form-input"
                                     placeholder="Naziv projekta"
                                     name="projectName"
                                     id="projectName"
                                 />
+                                <span class="input_msg"
+                                    >Naziv projekta 2 – 50 karaktera</span
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="shortDescIdea"
@@ -149,9 +153,13 @@
                                 <textarea
                                     name="shortDescIdea"
                                     id="shortDescIdea"
+                                    class="form-input"
                                     rows="7"
                                     placeholder="Opis ideje"
                                 ></textarea>
+                                <span class="input_msg">
+                                    Kratak opis 2 – 150 karaktera
+                                </span>
                             </div>
                             <div class="form-group">
                                 <label for="elaborationIdea"
@@ -161,9 +169,13 @@
                                 <textarea
                                     name="elaborationIdea"
                                     id="elaborationIdea"
+                                    class="form-input"
                                     rows="15"
                                     placeholder="Elaboracija ideje"
                                 ></textarea>
+                                <span class="input_msg">
+                                    Elaboracija ideje 2- 2000 karaktera
+                                </span>
                             </div>
                         </div>
                         <div class="tab">
@@ -177,20 +189,28 @@
                                         <label for="article1">Član 1</label>
                                         <input
                                             type="text"
-                                            class="form-control"
+                                            class="form-control form-input"
                                             placeholder="Ime i prezime"
                                             name="article1"
                                             id="article1"
                                         />
+                                        <span class="input_msg"
+                                            >Ime I prezime 2 – 50
+                                            karaktera</span
+                                        >
                                     </div>
                                     <div class="form-group">
                                         <input
                                             type="text"
-                                            class="form-control"
+                                            class="form-control form-input"
                                             placeholder="Kratka biografija (max 150 karaktera)"
                                             name="biography1"
                                             id="biography1"
                                         />
+                                        <span class="input_msg"
+                                            >Kratka biografija 2 – 150
+                                            karaktera</span
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -210,16 +230,27 @@
                                 predstavlja vaš projekat
                             </h1>
                             <div class="form-group">
-                                <div class="upload_wrapper">
-                                    <label class="new-button" for="upload">
-                                    <input id="upload" type="file"/>
+                                <div
+                                    class="uplaod_wrapper"
+                                    onclick="document.getElementById('selectedFile').click();"
+                                >
+                                    <img
+                                        src="img/multistep/arrow.svg"
+                                        alt=""
+                                        class="upload_btn"
+                                    />
+                                    <label>
+                                        PREZENTACIJA<br />
+                                        <span>max 8 slajdova</span>
+                                    </label>
+                                    <input type="file" id="selectedFile" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="projectName">Video Link</label>
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    class="form-control form-input"
                                     placeholder="Nalijepite vaš video link"
                                     name="video"
                                     id="video"
