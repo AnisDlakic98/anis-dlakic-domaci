@@ -515,9 +515,11 @@ body.active .wrapper_logo img {
   cursor: pointer;
 }
 
-#prevBtn {
+#backBtn {
   cursor: pointer;
   padding: 0;
+  opacity: 0;
+  pointer-events: none;
   position: absolute;
   top: 80px;
   left: 80px;
@@ -525,12 +527,17 @@ body.active .wrapper_logo img {
   z-index: 1;
 }
 
-#prevBtn:hover {
+#backBtn.active {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+#backBtn:hover {
   color: #ffff;
   background: transparent;
 }
 
-#prevBtn img {
+#backBtn img {
   margin-right: 10px;
 }
 
@@ -558,15 +565,22 @@ body.active .wrapper_logo img {
 #current_step {
   width: 57px;
   height: 57px;
+  cursor: pointer;
   line-height: 57px;
   border: solid 2px #ffff;
   border-radius: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: #ffff;
+  transition: 0.4s;
   font-weight: 400;
   margin-top: 19px;
   margin-right: 10px;
+}
+
+#current_step:hover {
+  background: #ffff;
+  color: #96074e;
 }
 
 .steps {
@@ -766,7 +780,7 @@ body.active .wrapper_logo img {
   body.finish .dark_icons .right {
     right: -260px;
   }
-  #prevBtn {
+  #backBtn {
     top: 20px;
     left: 20px;
   }

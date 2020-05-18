@@ -135,14 +135,20 @@
     cursor: pointer;
 }
 
-#prevBtn {
+#backBtn {
     cursor: pointer;
     padding: 0;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     top: 80px;
     left: 80px;
     border: none;
     z-index: 1;
+    &.active {
+        opacity: 1;
+        pointer-events: visible;
+    }
     &:hover {
         color: $white;
         background: transparent;
@@ -176,15 +182,21 @@
 #current_step {
     width: 57px;
     height: 57px;
+    cursor: pointer;
     line-height: 57px;
     border: solid 2px $white;
     border-radius: 100%;
     font-family: $font_stack_1;
     font-size: 20px;
     color: $white;
+    transition: 0.4s;
     font-weight: map-get($font-weights, regular);
     margin-top: 19px;
     margin-right: 10px;
+    &:hover {
+        background: $white;
+        color: $primary-color;
+    }
 }
 
 .steps {

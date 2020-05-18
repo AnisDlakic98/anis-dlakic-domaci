@@ -33,12 +33,7 @@
 
     <body class="">
         <div class="wrapper">
-            <button
-                type="button"
-                class="btn btn_primary"
-                id="prevBtn"
-                onclick="nextPrev(-1)"
-            >
+            <button type="button" class="btn btn_primary" id="backBtn">
                 <img src="img/arrow-left.svg" alt="" /> Nazad
             </button>
             <div class="wrapper__bg"></div>
@@ -313,7 +308,8 @@
                             </div>
                         </div>
                         <div class="text-center d-flex">
-                            <div id="current_step">1</div>
+                            <div id="current_step" onclick="nextPrev(-1)"></div>
+
                             <button
                                 type="button"
                                 id="nextBtn"

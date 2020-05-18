@@ -10,6 +10,7 @@ const toHomePage = document.querySelector("#toHomePage");
 const addArticleBtn = document.querySelector("#addArticleBtn");
 const articles = document.querySelector("#articles");
 const selectedFile = document.querySelector("#selectedFile");
+const backBtn = document.querySelector("#backBtn");
 
 const animations = ["animated", "slideInUp"];
 const animations1 = ["animated", "bounceInLeft"];
@@ -28,10 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     validateInput(`biography1`, false, 150);
     validateInput(`video`, urlRegex, 150);
 
+    backBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        location.reload();
+    });
+
     runFormBtn.addEventListener("click", (event) => {
         event.preventDefault();
         body.classList.add("active");
         rocket.classList.add("active");
+        backBtn.classList.add("active");
         multi__step.classList.add(...animations);
     });
     toHomePage.addEventListener("click", (event) => {
@@ -138,9 +145,9 @@ function showTab(n) {
     x[n].classList.add(...animations1);
     wrapper.scrollTo({ top: 0 });
     if (n == 0) {
-        document.getElementById("prevBtn").style.display = "none";
+        document.getElementById("current_step").style.display = "none";
     } else {
-        document.getElementById("prevBtn").style.display = "inline";
+        document.getElementById("current_step").style.display = "inline";
     }
 
     if (n == 2) {
