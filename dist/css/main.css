@@ -130,6 +130,7 @@ body::after {
   transform: translate(-50%);
   width: 100%;
   height: 100%;
+  background-size: cover;
 }
 
 body.finish .dark_icons .left {
@@ -289,11 +290,16 @@ body.finish .multi__step #formResults li {
   display: block;
   background: #ffff;
   border-radius: 50%;
+  transition: 0.4s;
 }
 
 .main_footer .social ul li a i {
   font-size: 20px;
   color: #791246;
+}
+
+.main_footer .social ul li a:hover {
+  transform: translateY(-10px);
 }
 
 .main_footer h3 {
@@ -385,7 +391,7 @@ body.active .wrapper_logo img {
 }
 
 .multi_step_form .form-group {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .multi_step_form .form-group .input_msg {
@@ -394,11 +400,12 @@ body.active .wrapper_logo img {
   margin-top: 7px;
   transition: 0.5s;
   justify-content: flex-end;
-  display: none;
+  display: flex;
+  opacity: 0;
 }
 
 .multi_step_form .form-group .input_msg.invalid {
-  display: flex;
+  opacity: 1;
   color: #ff4343;
 }
 
@@ -434,7 +441,7 @@ body.active .wrapper_logo img {
   cursor: pointer !important;
   outline: none;
   position: absolute;
-  top: 21px;
+  top: 17px;
   right: 15px;
   font-family: "Khula", sans-serif;
   font-size: 15px;
@@ -693,15 +700,15 @@ body.active .wrapper_logo img {
     z-index: 1;
   }
   #rocket.active {
-    opacity: 0.4;
+    opacity: 0.2;
   }
   #rocket.one {
     bottom: 5%;
-    opacity: 0.4;
+    opacity: 0.2;
   }
   #rocket.two {
     bottom: 50%;
-    opacity: 0.4;
+    opacity: 0.2;
   }
   body.finish .dark_icons .left {
     left: 0;
@@ -716,7 +723,7 @@ body.active .wrapper_logo img {
     margin-top: 50px !important;
   }
   .multi_step_form {
-    width: 95%;
+    width: 80%;
   }
   .multi_step_form h1 {
     margin-left: auto;

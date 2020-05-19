@@ -16,7 +16,7 @@ const animations = ["animated", "slideInUp"];
 const animations1 = ["animated", "bounceInLeft"];
 
 var tempArticle = 1;
-var max = 3;
+var max = 5;
 var limit = false;
 
 //________after DOM is loaded________//
@@ -186,7 +186,7 @@ function showTab(n) {
 
 function nextPrev(n) {
     var x = document.getElementsByClassName("tab");
-    if (n == 1 && !validateForm()) return false;
+    if (n > 0 && !validateForm()) return false;
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (currentTab == x.length - 1) {
@@ -195,27 +195,38 @@ function nextPrev(n) {
     if (currentTab >= x.length) {
         return false;
     }
-    // Otherwise, display the correct tab:
     showTab(currentTab);
     currentStep.innerHTML = currentTab + 1;
-
-    rocket;
 }
 
 function validateForm() {
     var x,
         y,
         i,
+        sibling,
         valid = true;
     x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByClassName("form-input");
+    var booleans = [];
+
     for (i = 0; i < y.length; i++) {
-        if (y[i].classList.contains("valid")) {
-            valid = true;
+        if (y[i].nextElementSibling != null) {
+            sibling = y[i].nextElementSibling;
         } else {
-            valid = false;
+            sibling = y[i].parentElement.nextElementSibling;
+        }
+
+        if (!y[i].classList.contains("valid")) {
+            sibling.classList.add("invalid");
+            booleans.push(false);
+        } else {
+            sibling.classList.remove("invalid");
+            booleans.push(true);
         }
     }
+
+    booleans.includes(false) ? (valid = false) : (valid = true);
+
     return valid;
 }
 
@@ -225,15 +236,16 @@ function validateForm() {
 
 function submitForm() {
     var form_data = document.querySelector(".multi_step_form").elements;
-    console.log(form_data);
-
     var listItems = "";
     for (var input in form_data) {
-        var element = document.getElementById(form_data[input]["name"]);
-        if (element != null && element.value != "undefined") {
-            console.log("value" + element.value + " - element: " + element);
+        if (input != "undefined") {
+            var element = document.getElementById(form_data[input]["name"]);
+        }
 
-            listItems += `<li><b>${element.placeholder}: </b><span>${element.value}</span></li>`;
+        if (element != null) {
+            listItems += `<li><b>${
+                element.placeholder != "undefined" ? element.placeholder : ""
+            }: </b><span>${element.value}</span></li>`;
         }
     }
     document.getElementById("formResults").innerHTML = listItems;
@@ -273,29 +285,36 @@ function validateFile(input) {
     var inputObject = document.getElementById(input);
     var is_input = inputObject.value;
     var input_msg = document.getElementById("upload_msg");
-    if (is_input != "") {
-        var checkValue = inputObject.value.toLowerCase();
-        if (!checkValue.match(/(\.ppt|\.pptx)$/)) {
-            input_msg.classList.remove("valid");
-            input_msg.classList.add("invalid");
-            inputObject.classList.remove("valid");
-            inputObject.classList.add("invalid");
-            input_msg.innerHTML = "Dozvoljen upload fajlova .ppt i .pptx";
-            return false;
-        }
-        if (inputObject.files[0].size > 5000000) {
-            input_msg.classList.remove("valid");
-            input_msg.classList.add("invalid");
-            inputObject.classList.remove("valid");
-            inputObject.classList.add("invalid");
-            input_msg.innerHTML = "Dozvoljen upload fajlova veličine do 5MB";
-            return false;
-        }
-        input_msg.classList.remove("invalid");
-        input_msg.classList.add("valid");
-        inputObject.classList.remove("invalid");
-        inputObject.classList.add("valid");
-        input_msg.innerHTML = "";
-        return true;
+
+    if (is_input == "") {
+        input_msg.classList.remove("valid");
+        input_msg.classList.add("invalid");
+        inputObject.classList.remove("valid");
+        inputObject.classList.add("invalid");
+        input_msg.innerHTML = "Fajl je obavezan!";
+        return false;
     }
+    var checkValue = inputObject.value.toLowerCase();
+    if (!checkValue.match(/(\.ppt|\.pptx)$/)) {
+        input_msg.classList.remove("valid");
+        input_msg.classList.add("invalid");
+        inputObject.classList.remove("valid");
+        inputObject.classList.add("invalid");
+        input_msg.innerHTML = "Dozvoljen upload fajlova .ppt i .pptx";
+        return false;
+    }
+    if (inputObject.files[0].size > 5000000) {
+        input_msg.classList.remove("valid");
+        input_msg.classList.add("invalid");
+        inputObject.classList.remove("valid");
+        inputObject.classList.add("invalid");
+        input_msg.innerHTML = "Dozvoljen upload fajlova veličine do 5MB";
+        return false;
+    }
+    input_msg.classList.remove("invalid");
+    input_msg.classList.add("valid");
+    inputObject.classList.remove("invalid");
+    inputObject.classList.add("valid");
+    input_msg.innerHTML = "";
+    return true;
 }

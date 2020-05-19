@@ -20,13 +20,14 @@
             margin-top: 7px;
             transition: 0.5s;
             justify-content: flex-end;
-            display: none;
+            display: flex;
+            opacity: 0;
             &.invalid {
-                display: flex;
+                opacity: 1;
                 color: #ff4343;
             }
         }
-        margin-top: 20px;
+        margin-top: 5px;
         .uplaod_wrapper {
             border: 1px dashed #ffffff;
             height: 60px;
@@ -61,7 +62,7 @@
                 cursor: pointer !important;
                 outline: none;
                 position: absolute;
-                top: 21px;
+                top: 17px;
                 right: 15px;
                 font-family: $font_stack_2;
                 font-size: 15px;

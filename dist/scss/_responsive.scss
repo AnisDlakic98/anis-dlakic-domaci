@@ -3,15 +3,15 @@
         z-index: 1;
 
         &.active {
-            opacity: 0.4;
+            opacity: 0.2;
         }
         &.one {
             bottom: 5%;
-            opacity: 0.4;
+            opacity: 0.2;
         }
         &.two {
             bottom: 50%;
-            opacity: 0.4;
+            opacity: 0.2;
         }
     }
     body.finish {
@@ -29,7 +29,7 @@
         margin-top: 50px !important;
     }
     .multi_step_form {
-        width: 95%;
+        width: 80%;
         h1 {
             margin-left: auto;
             margin-right: auto;
