@@ -1,4 +1,11 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*
 -------------------------------------------
 File Name: main.scss
 Created By: Anis Dlakic
@@ -6,6 +13,7 @@ Website: BoostMeUp
 Version: 1.0
 -------------------------------------------
 */
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap");
 ul {
@@ -33,10 +41,14 @@ h2 {
 }
 
 .d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .d-flex.justify-content-between {
+  -webkit-box-pack: justify !important;
+  -ms-flex-pack: justify !important;
   justify-content: space-between !important;
 }
 
@@ -44,6 +56,8 @@ h2 {
   font-size: 20px;
   color: #ffff;
   cursor: pointer;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -60,7 +74,10 @@ h2 {
 BUTTONS
 -------------------------------------------
 */
+
 .btn {
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
   border-radius: 35px;
   padding: 16px 85px;
@@ -90,8 +107,7 @@ BUTTONS
   color: #ffff;
 }
 
-#addArticleBtn,
-#removeArticleBtn {
+#addArticleBtn, #removeArticleBtn {
   width: 100%;
   border-radius: 8px;
   border-color: #ffffff57;
@@ -113,6 +129,8 @@ body {
 body::before {
   content: "";
   background: url(../img/multistep/bg.svg);
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
   position: absolute;
   top: 0;
@@ -127,6 +145,8 @@ body::after {
   position: absolute;
   top: 0;
   left: 50%;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
   transform: translate(-50%);
   width: 100%;
   height: 100%;
@@ -198,12 +218,16 @@ body.finish .multi__step #formResults li {
   text-align: center;
   position: relative;
   top: 70px;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
 }
 
 .wrapper .wrapper_logo img {
   width: 526px;
   height: 140px;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
 }
 
@@ -211,6 +235,8 @@ body.finish .multi__step #formResults li {
   position: relative;
   top: 5rem;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -262,6 +288,8 @@ body.finish .multi__step #formResults li {
 
 .main_footer .info {
   margin-top: 20px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
@@ -276,6 +304,8 @@ body.finish .multi__step #formResults li {
 }
 
 .main_footer .social ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
@@ -290,6 +320,8 @@ body.finish .multi__step #formResults li {
   display: block;
   background: #ffff;
   border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -299,6 +331,8 @@ body.finish .multi__step #formResults li {
 }
 
 .main_footer .social ul li a:hover {
+  -webkit-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
   transform: translateY(-10px);
 }
 
@@ -319,6 +353,8 @@ body.finish .multi__step #formResults li {
 }
 
 body.active::before {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
@@ -350,6 +386,8 @@ body.active .wrapper_logo img {
   left: 0;
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
   z-index: 1;
 }
@@ -377,6 +415,8 @@ body.active .wrapper_logo img {
 }
 
 .multi_step_form .d-flex {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -398,8 +438,14 @@ body.active .wrapper_logo img {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   margin-top: 7px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   opacity: 0;
 }
@@ -415,6 +461,8 @@ body.active .wrapper_logo img {
   border-radius: 8px;
   position: relative;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0 20px;
 }
@@ -482,10 +530,10 @@ body.active .wrapper_logo img {
   padding-top: 25px;
 }
 
-.multi_step_form .form-group .form-control,
-.multi_step_form .form-group textarea {
+.multi_step_form .form-group .form-control, .multi_step_form .form-group textarea {
   width: 100%;
   background: #ffffff24;
+  -webkit-box-shadow: 0px 0px 5px #e879db;
   box-shadow: 0px 0px 5px #e879db;
   border: none;
   border-radius: 8px;
@@ -497,21 +545,22 @@ body.active .wrapper_logo img {
   font-weight: 400;
   padding-left: 20px;
   padding-right: 20px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.multi_step_form .form-group .form-control::-webkit-input-placeholder,
-.multi_step_form .form-group textarea::-webkit-input-placeholder {
+.multi_step_form .form-group .form-control::-webkit-input-placeholder, .multi_step_form .form-group textarea::-webkit-input-placeholder {
   color: #ffff;
 }
 
-.multi_step_form .form-group .form-control:-moz-placeholder,
-.multi_step_form .form-group textarea:-moz-placeholder {
+.multi_step_form .form-group .form-control:-moz-placeholder, .multi_step_form .form-group textarea:-moz-placeholder {
   color: #ffff;
 }
 
 /* Mark input boxes that gets an error on validation: */
+
 /* Hide all steps by default: */
+
 .tab {
   display: none;
 }
@@ -549,6 +598,7 @@ body.active .wrapper_logo img {
 }
 
 /* Make circles that indicate the steps of the form: */
+
 .step {
   height: 15px;
   width: 15px;
@@ -565,6 +615,7 @@ body.active .wrapper_logo img {
 }
 
 /* Mark the steps that are finished and valid: */
+
 .step.finish {
   background-color: #4caf50;
 }
@@ -579,6 +630,8 @@ body.active .wrapper_logo img {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: #ffff;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
   font-weight: 400;
   margin-top: 19px;
@@ -601,6 +654,8 @@ body.active .wrapper_logo img {
   position: absolute;
   right: 0;
   opacity: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 
@@ -619,40 +674,94 @@ body.active .wrapper_logo img {
   opacity: 1;
 }
 
-@keyframes bounceInLeft {
-  from,
-  60%,
-  75%,
-  90%,
-  to {
+@-webkit-keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   0% {
     opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
     transform: translate3d(-3000px, 0, 0);
   }
   60% {
     opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
     transform: translate3d(25px, 0, 0);
   }
   75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
     transform: translate3d(-10px, 0, 0);
   }
   90% {
+    -webkit-transform: translate3d(5px, 0, 0);
     transform: translate3d(5px, 0, 0);
   }
   to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slideInUp {
   from {
+    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
     visibility: visible;
   }
   to {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -662,6 +771,15 @@ body.active .wrapper_logo img {
   }
   to {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -675,23 +793,29 @@ body.active .wrapper_logo img {
 }
 
 .fadeOut {
+  -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
 }
 
 .fadeIn {
+  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 
 .slideInUp {
+  -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
 }
 
 .bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
   animation-name: bounceInLeft;
 }
 
 .animated {
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -730,6 +854,8 @@ body.active .wrapper_logo img {
     margin-right: auto;
   }
   body.active::before {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
     transform: scale(1.1);
   }
   body.active .main__slide {
@@ -747,8 +873,7 @@ body.active .wrapper_logo img {
   body.active .wrapper_logo img {
     width: 246px;
   }
-  h2,
-  h1 {
+  h2, h1 {
     width: 90% !important;
     font-size: 30px !important;
   }
@@ -756,6 +881,8 @@ body.active .wrapper_logo img {
     position: absolute;
     right: 50%;
     bottom: auto;
+    -webkit-transform: translate(50%);
+    -ms-transform: translate(50%);
     transform: translate(50%);
   }
   .main_footer .social ul {
@@ -840,4 +967,3 @@ body.active .wrapper_logo img {
     width: 100%;
   }
 }
-/*# sourceMappingURL=main.css.map */
