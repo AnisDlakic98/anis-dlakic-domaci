@@ -2,16 +2,17 @@
 -------------------------------------------
 File Name: main.scss
 Created By: Anis Dlakic
-Website: BoostMeUp
+Website: Naucna Ekspedicija
 Version: 1.0
 -------------------------------------------
 */
 
-// variable scss
+// presets scss
+@import "fonts";
 @import "variables";
 @import "common";
 @import "buttons";
-@import "multistep";
-@import "popup";
-@import "animations";
-@import "responsive";
+// components scss
+@import "header";
+@import "masthead";
+@import "section";

@@ -1,0 +1,146 @@
+/*
+-------------------------------------------
+FileName: _section.scss
+Component: Section 
+-------------------------------------------
+*/
+
+/* Appointments Section */
+#appointments {
+    height: auto;
+    .section_wrapper {
+    }
+    &::after {
+        content: "";
+        background: $secondary_color;
+        height: 100%;
+        transform: matrix(1, -0.07, 0.07, 1, 0, 0);
+        width: 103%;
+        top: 0;
+        left: -20px;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .section_mask {
+        z-index: -1;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        &.one {
+            top: 0;
+            left: 0;
+            background: $primary_color;
+        }
+        &.two {
+            bottom: 0;
+            left: 0;
+            background: $light_color;
+        }
+    }
+
+    .section_wrapper {
+        z-index: 1;
+        h1 {
+            color: #ffffff;
+        }
+    }
+}
+
+/* Global Sections */
+.section {
+    padding: 60px 0;
+    &.skew {
+        position: relative;
+        .top_mask {
+            svg {
+                position: absolute;
+                top: -10vw;
+                height: 10vw;
+                width: 100%;
+            }
+        }
+    }
+    .section_details_one {
+        img {
+            z-index: -1;
+            position: absolute;
+            &:nth-child(1) {
+                left: 2%;
+                top: 15%;
+                transform: translate(2%, -15%);
+            }
+            &:nth-child(2) {
+                left: 12%;
+                top: 40%;
+                transform: translate(-40%, -12%);
+            }
+            &:nth-child(3) {
+                right: 12%;
+                top: 12%;
+                transform: translate(-12%);
+            }
+            &:nth-child(4) {
+                right: 15%;
+                bottom: 12%;
+                transform: translate(-15%, -12%);
+            }
+        }
+    }
+    .section_details_two {
+        img {
+            position: absolute;
+            &:nth-child(1) {
+                left: 2%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:nth-child(2) {
+                left: 15%;
+                top: 30%;
+                transform: translateY(-15%, -30%);
+            }
+        }
+    }
+    .section_title.skew {
+        position: relative;
+        margin: 0 auto;
+        padding: 28px 0 10px;
+        text-align: center;
+        position: relative;
+        width: 382px;
+
+        h2 {
+            font-family: "Helvetica Neue Medium";
+            font-size: 46px;
+            color: $white;
+            text-transform: uppercase;
+            line-height: 0;
+            position: relative;
+            top: -7px;
+        }
+        svg {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .text_block {
+        p {
+            font-family: "Helvetica Neue Light";
+            font-size: 24px;
+            color: $secondary_color;
+            line-height: 1.5;
+            z-index: 2;
+        }
+    }
+}
+
+/* Project Section */
+#project {
+    position: relative;
+    padding-bottom: 120px;
+}

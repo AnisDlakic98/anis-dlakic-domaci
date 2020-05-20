@@ -1,0 +1,86 @@
+/*
+-------------------------------------------
+FileName: _fonts.scss
+Component: Font Face
+-------------------------------------------
+*/
+
+@font-face {
+    font-family: "Helvetica 35 Thin";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica 35 Thin"),
+        url("HelveticaNeue-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica 36 Thin Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica 36 Thin Italic"),
+        url("HelveticaNeue-ThinItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue Italic"),
+        url("HelveticaNeueItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue UltraLight";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue UltraLight"),
+        url("HelveticaNeueUltraLight.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue UltraLight Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue UltraLight Italic"),
+        url("HelveticaNeueUltraLightItal.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Light";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue Light"),
+        url("HelveticaNeueLight.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Light Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue Light Italic"),
+        url("HelveticaNeueLightItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Medium";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue Medium"),
+        url("HelveticaNeueMedium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue Bold"),
+        url("HelveticaNeueBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Bold Italic";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica Neue Bold Italic"),
+        url("HelveticaNeueBoldItalic.woff") format("woff");
+}

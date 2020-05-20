@@ -16,7 +16,7 @@
         />
 
         <!-- Site Meta -->
-        <title>BoostMeUp | Početna</title>
+        <title>Naučna Ekspedicija | Početna</title>
         <link rel="icon" href="" />
         <meta name="keywords" content="challange, design, amplitudo" />
         <meta name="description" content="Design challange by Amplitudo" />
@@ -31,315 +31,158 @@
         <link rel="stylesheet" href="css/main.css" />
     </head>
 
-    <body class="">
-        <div class="wrapper">
-            <button type="button" class="btn btn_primary" id="backBtn">
-                <img src="img/arrow-left.svg" alt="" /> Nazad
-            </button>
-            <div class="wrapper__bg"></div>
-            <div class="wrapper_logo">
-                <a href="#"
-                    ><img src="img/logo.svg" class="main__logo" alt=""
-                /></a>
+    <body>
+        <!-- ===================== Header ===================== -->
+        <header id="header">
+            <div class="navbar">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="#project" class="nav_link">O projektu</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#appointments" class="nav_link">Termini</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#agenda" class="nav_link">Agenda</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#kviz" class="nav_link">Kviz</a>
+                    </li>
+                </ul>
             </div>
-            <section class="register">
-                <div class="main__slide">
-                    <div class="container text-center">
-                        <div class="main__slide__content">
-                            <h2>
-                                Mi smo predakceleracijski program koji vam
-                                pomaže da od vaše ideje napravite uspješan
-                                startup.
-                            </h2>
-                            <div>
-                                <a href="#" class="btn btn_transparent"
-                                    >OPŠIRNIJE</a
-                                >
-                            </div>
-                            <a href="#" id="run_form" class="btn btn_primary"
-                                >Prijavi se</a
-                            >
+        </header>
+
+        <!-- ===================== Masthead ===================== -->
+        <div id="masthead"></div>
+
+        <!-- ===================== Project ===================== -->
+        <section class="section skew" id="project">
+            <div class="section_details_one">
+                <img src="img/section/triangle.svg" alt="sectionDetail" />
+                <img src="img/section/rectangle.svg" alt="sectionDetail" />
+                <img src="img/section/circle.svg" alt="sectionDetail" />
+                <img src="img/section/triangle.svg" alt="sectionDetail" />
+            </div>
+            <div class="top_mask">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                >
+                    <polygon fill="#ffffff" points="0,100 100,0 100,100" />
+                </svg>
+            </div>
+            <div class="content">
+                <div class="section_title skew mb-5">
+                    <h2>O projektu</h2>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="373.395"
+                        height="94.793"
+                        viewBox="0 0 373.395 94.793"
+                    >
+                        <defs>
+                            <style>
+                                .a {
+                                    fill: #edc106;
+                                }
+                            </style>
+                        </defs>
+                        <path
+                            class="a"
+                            d="M774,971.949l373.395-24.895v94.793H774Z"
+                            transform="translate(-774 -947.055)"
+                        />
+                    </svg>
+                </div>
+                <div class="container">
+                    <div class="text_block">
+                        <p>
+                            Ministarstvo nauke krajem februara pokreće svoj
+                            "Karavan nauke" koji će na svom putu obići srednje
+                            škole u Crnoj Gori i to u sledećim gradovima:
+                            Pljevljima, Bijelom Polju, Beranama, Andrijevici,
+                            Baru, Kotoru, Cetinju, Danilovgradu i Nikšiću.
+                        </p>
+                        <p>
+                            Cilj ove putujuće učionice jeste da učenicima
+                            osnovne i srednje škole, kao i ostaloj
+                            zainteresovanoj javnosti na što zanimljiviji način
+                            predstavi i približi fantastičan svijet nauke.
+                        </p>
+                        <p>
+                            Tim promotera čine predstavnici organizacija koje se
+                            bave promocijom nauke i koji će kroz svoje zabavne
+                            radionice učiniti nauku još zanimljivijom. U tom
+                            smislu želimo unaprijediti naučnu pismenost mladih
+                            kroz eksperimente, prezentacije, radionice…
+                        </p>
+                        <div class="section_details_two">
+                            <img
+                                src="img/section/man.svg"
+                                alt="sectionDetail"
+                            />
+                            <img src="img/section/pi.svg" alt="sectionDetail" />
                         </div>
-                        <div class="main__slide__footer">
-                            <div class="partners">
-                                <a href="#" target="_blank">
-                                    <img
-                                        src="img/partners/1.png"
-                                        alt="partner_logo"
-                                        id="tehnopolis"
-                                    />
-                                </a>
-                                <a href="#" target="_blank">
-                                    <img
-                                        src="img/partners/2.png"
-                                        alt="partner_logo"
-                                        id="ntppark"
-                                    />
-                                </a>
-                                <a href="#" target="_blank">
-                                    <img
-                                        src="img/partners/3.png"
-                                        alt="partner_logo"
-                                        id="amplitudo"
-                                    />
-                                </a>
-                            </div>
-                            <div class="main_footer">
-                                <div class="info">
-                                    <h3>Podržano od</h3>
-                                    <img
-                                        src="img/goverment.svg"
-                                        alt="footer_logo"
-                                    />
-                                    <h3>Crna Gora Ministarstvo Nauke</h3>
-                                </div>
-                                <div class="social">
-                                    <ul>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" target="_blank">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <p>
+                            Posjetioci će biti u prilici da saznaju više o tome
+                            šta nude nauka, inovacije i tehnologija iz oblasti
+                            fizike, matematike, hemije, biologije… Takođe ćemo
+                            ih uvesti u svijet robotike, govoriti o zelenoj
+                            energiji (korišćenje energije iz oblasti obnovljivih
+                            izvora energije kroz praktične primjere), naučiti
+                            nešto više o mikrokontrolerima i mikroračunarima.
+                        </p>
+                        <p>
+                            Nezaobilazni dio ovog karavana jeste i izložba
+                            "Upoznajte Nobelovce" na kojoj će biti predstavljeni
+                            dobitnici najprestižnije nagrade iz oblasti fizike,
+                            hemije i ekonomskih nauka.
+                        </p>
+                        <p>
+                            Kroz ove postavke, tačnije 18 izložbenih postera,
+                            učenici će moći bolje da se informišu o radu
+                            naučnika koji su dobili Nobelovu nagradu za izuzetni
+                            doprinos čovječanstvu.
+                        </p>
+                        <p>
+                            Zato koristimo priliku da vas pozovemo da posjetite
+                            "Karavan znanja" u vašem gradu i ne propustite
+                            priliku da radoznalim glavama pomognete da uđu u
+                            svijet nauke - jer možda baš u vašem djetetu leži
+                            sljedeći Nobelovac.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== Jumbotron ===================== -->
+        <section class="section skew" id="appointments">
+            <div class="section_mask one"></div>
+            <div class="section_mask two"></div>
+            <div class="section_wrapper">
+                <div class="container text_center m_auto">
+                    <div class="section_title normal">
+                        <h2>Termini</h2>
+                        <div>
+                            <p>po gradovima</p>
+                        </div>
+                    </div>
+                    <div class="appointmets_list">
+                        <div class="cities d-flex">
+                            <img src="img/map-marker.svg" alt="map-icon" />
+                        </div>
+                        <div class="dates d-flex">
+                            <img src="img/calendar.svg" alt="calendar-icon" />
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="multi__step">
-                    <form
-                        id="regForm"
-                        class="multi_step_form"
-                        enctype="multipart/form-data"
-                    >
-                        <div class="tab">
-                            <h1>Recite nam malo više o vašoj ideji</h1>
-
-                            <div class="form-group">
-                                <label for="projectName">Naziv projekta</label>
-                                <input
-                                    type="text"
-                                    class="form-control form-input"
-                                    placeholder="Naziv projekta"
-                                    name="projectName"
-                                    id="projectName"
-                                />
-                                <span class="input_msg"
-                                    >Naziv projekta 2 – 50 karaktera</span
-                                >
-                            </div>
-                            <div class="form-group">
-                                <label for="shortDescIdea"
-                                    >Kratak opis ideje (max 150
-                                    karaktera)</label
-                                >
-                                <textarea
-                                    name="shortDescIdea"
-                                    id="shortDescIdea"
-                                    class="form-input"
-                                    rows="7"
-                                    placeholder="Opis ideje"
-                                ></textarea>
-                                <span class="input_msg">
-                                    Kratak opis 2 – 150 karaktera
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="elaborationIdea"
-                                    >Elaboracija ideje (max 2000
-                                    karaktera)</label
-                                >
-                                <textarea
-                                    name="elaborationIdea"
-                                    id="elaborationIdea"
-                                    class="form-input"
-                                    rows="15"
-                                    placeholder="Elaboracija ideje"
-                                ></textarea>
-                                <span class="input_msg">
-                                    Elaboracija ideje 2- 2000 karaktera
-                                </span>
-                            </div>
-                        </div>
-                        <div class="tab">
-                            <h1>
-                                Sad je red da se bolje upoznamo :) Upišite imena
-                                članova kao i njihovu kratku biografiju
-                            </h1>
-                            <div id="articles">
-                                <div id="inputGroup1" class="inputGroup">
-                                    <div class="form-group">
-                                        <label for="article1">Član 1</label>
-                                        <input
-                                            type="text"
-                                            class="form-control form-input"
-                                            placeholder="Ime i prezime"
-                                            name="article1"
-                                            id="article1"
-                                        />
-                                        <span class="input_msg"
-                                            >Ime I prezime 2 – 50
-                                            karaktera</span
-                                        >
-                                    </div>
-                                    <div class="form-group">
-                                        <input
-                                            type="text"
-                                            class="form-control form-input"
-                                            placeholder="Kratka biografija (max 150 karaktera)"
-                                            name="biography1"
-                                            id="biography1"
-                                        />
-                                        <span class="input_msg">
-                                            Kratka biografija 2 – 150 karaktera
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <button
-                                    class="btn btn_primary"
-                                    id="addArticleBtn"
-                                >
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="tab">
-                            <h1>
-                                Još malo i gotovo :) Uploadujte PowerPoint
-                                prezentaciju i kratak video klip koji
-                                predstavlja vaš projekat
-                            </h1>
-                            <div class="form-group">
-                                <div
-                                    class="uplaod_wrapper"
-                                    onclick="document.getElementById('selectedFile').click();"
-                                >
-                                    <img
-                                        src="img/multistep/arrow.svg"
-                                        alt=""
-                                        class="upload_btn"
-                                    />
-                                    <label>
-                                        PREZENTACIJA<br />
-                                        <span>max 8 slajdova</span>
-                                    </label>
-                                    <input
-                                        type="file"
-                                        id="selectedFile"
-                                        size="5"
-                                        class="form-input"
-                                        placeholder="Prezentacija"
-                                        name="selectedFile"
-                                    />
-                                </div>
-                                <span class="input_msg" id="upload_msg"
-                                    >Fajl je obavezan!</span
-                                >
-                            </div>
-                            <div class="form-group">
-                                <label for="projectName">Video Link</label>
-                                <input
-                                    type="text"
-                                    class="form-control form-input"
-                                    placeholder="Nalijepite vaš video link"
-                                    name="video"
-                                    id="video"
-                                />
-                                <span class="input_msg">
-                                    Url mora biti validan
-                                </span>
-                            </div>
-                        </div>
-                        <div class="tab pt-60">
-                            <h1>Uspješna prijava!</h1>
-                            <ul id="formResults">
-                                <li><b>Naziv projekta: </b><span></span></li>
-                                <li><b>Opis ideje: </b><span></span></li>
-                                <li><b>Elaboracija ideje: </b><span></span></li>
-                                <li><b>Ime i prezime: </b><span></span></li>
-                                <li><b>Kratka biografija: </b><span></span></li>
-                                <li><b>Prezentacija: </b><span></span></li>
-                                <li><b>Video link: </b><span></span></li>
-                            </ul>
-
-                            <a
-                                href=""
-                                class="btn btn_primary dark"
-                                id="toHomePage"
-                                >U redu</a
-                            >
-                            <div class="partners dark">
-                                <a href="#" target="_blank">
-                                    <img
-                                        src="img/partners/1-1.png"
-                                        alt="partner_logo"
-                                        id="tehnopolis"
-                                    />
-                                </a>
-                                <a href="#" target="_blank">
-                                    <img
-                                        src="img/partners/2-1.png"
-                                        alt="partner_logo"
-                                        id="ntppark"
-                                    />
-                                </a>
-                                <a href="#" target="_blank">
-                                    <img
-                                        src="img/partners/3-1.svg"
-                                        alt="partner_logo"
-                                        id="amplitudo"
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="text-center d-flex">
-                            <div id="current_step" onclick="nextPrev(-1)"></div>
-
-                            <button
-                                type="button"
-                                id="nextBtn"
-                                class="btn btn_primary"
-                                onclick="nextPrev(1)"
-                            >
-                                Dalje
-                            </button>
-                        </div>
-                        <!-- Circles which indicates the steps of the form: -->
-                        <div class="steps">
-                            <span class="step"></span>
-                            <span class="step"></span>
-                            <span class="step"></span>
-                            <span class="step"></span>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </div>
-        <img src="img/multistep/rocket.svg" id="rocket" alt="" />
-        <div class="dark_icons">
-            <img src="img/multistep/final2.svg" class="left" alt="" />
-            <img src="img/multistep/final1.svg" class="right" alt="" />
-        </div>
         <!-- JS Files Here -->
+        <script src="js/jquery.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/validation.js"></script>
     </body>
 </html>

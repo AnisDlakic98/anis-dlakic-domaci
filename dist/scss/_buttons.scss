@@ -1,6 +1,7 @@
 /*
 -------------------------------------------
-BUTTONS
+FileName: _buttons.scss
+Component: Button
 -------------------------------------------
 */
 
@@ -13,8 +14,6 @@ BUTTONS
     font-family: $font_stack_1;
     font-weight: map-get($font-weights, medium);
 
-    text-transform: uppercase;
-    letter-spacing: 2px;
     &#{&}_primary {
         background: transparent;
         color: $white;
@@ -24,24 +23,4 @@ BUTTONS
             background: $white;
         }
     }
-
-    &#{&}_transparent {
-        font-size: 24px;
-        text-decoration: underline;
-        padding: 0;
-        color: $white;
-    }
-}
-
-#addArticleBtn,
-#removeArticleBtn {
-    width: 100%;
-    border-radius: 8px;
-    border-color: #ffffff57;
-    position: relative;
-    cursor: pointer;
-}
-
-#removeArticleBtn {
-    display: none;
 }
