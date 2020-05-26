@@ -1,0 +1,265 @@
+/*
+-------------------------------------------
+FileName: _responsive.scss
+-------------------------------------------
+*/
+@media (max-width: 1570px) {
+    #project {
+        .container {
+            max-width: 800px;
+        }
+    }
+}
+
+@media (max-width: 1350px) {
+    #project {
+        .container {
+            margin-right: 60px;
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    #project {
+        .container {
+            max-width: 600px;
+            margin-right: 100px !important;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    #masthead {
+        height: 70vh !important;
+    }
+    #project {
+        .container {
+            max-width: 80%;
+            margin: auto !important;
+        }
+        .section_details_two {
+            text-align: center;
+            img {
+                position: relative;
+                transform: translate(0);
+                padding: 30px 0 !important;
+            }
+        }
+    }
+    #appointments {
+        .appointmets_container {
+            padding: 0;
+        }
+    }
+    #agenda {
+        .container {
+            max-width: 650px;
+        }
+    }
+    #quiz {
+        &.active {
+            #leftIcons {
+                img {
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        #leftIcons {
+            transform: translateX(15vw);
+        }
+        #rightIcons {
+            transform: translateX(-15vw);
+            img {
+                &:nth-child(1) {
+                    z-index: 1;
+                    height: 40vh;
+                    right: 0;
+                    bottom: 0;
+                }
+                &:nth-child(2) {
+                    width: 50vw;
+                    right: 20%;
+                    bottom: 50px;
+                }
+                &:nth-child(3) {
+                    width: calc(112px - 2vw);
+                    top: 13%;
+                    right: 50%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .section_title {
+        width: 300px !important;
+        h2 {
+            font-size: 30px !important;
+        }
+        &.normal {
+            width: 90% !important;
+            p {
+                width: 100% !important;
+                margin: auto;
+                text-align: center !important;
+            }
+        }
+    }
+    p {
+        text-align: justify;
+        font-size: 20px !important;
+    }
+
+    #masthead {
+        height: 50vh !important;
+    }
+    #appointments {
+        &::after {
+            left: -60px;
+            width: 160%;
+        }
+        .women {
+            right: 50%;
+            bottom: -220px;
+            transform: translateX(50%);
+        }
+        .appointmets_container {
+            flex-direction: column;
+            padding: 0 50px;
+            .appointment_group {
+                flex-direction: row;
+                justify-content: space-between;
+                h4 {
+                    margin-top: 45px;
+                }
+                img {
+                    margin: 0 !important;
+                    position: relative;
+                    &:nth-child(1) {
+                        left: 30px;
+                    }
+                    &:nth-child(2) {
+                        right: 17px;
+                    }
+                }
+            }
+        }
+    }
+    #agenda {
+        .container {
+            max-width: 90%;
+        }
+        .undraw {
+            display: none;
+        }
+        .section_title {
+            margin: 190px auto 0 auto;
+            p {
+                text-align: center !important;
+            }
+        }
+    }
+    .accordion_title {
+        font-size: 20px;
+    }
+    #quiz {
+        padding-bottom: 30px !important;
+        #quizForm {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #leftIcons {
+            img {
+                width: 70px !important;
+            }
+        }
+        #rightIcons {
+            img {
+                &:nth-child(1) {
+                }
+                &:nth-child(2) {
+                    width: 70vw;
+                }
+                &:nth-child(3) {
+                    width: 70px;
+                    right: 70%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .section_details_two {
+        img {
+            &:first-child {
+                width: 150px;
+            }
+        }
+    }
+    #appointments {
+        .women {
+            width: 120px;
+            bottom: -100px;
+        }
+    }
+    #agenda {
+        .section_title {
+            margin-top: 50px;
+        }
+    }
+    #quiz {
+        .single_question_wrapp {
+            h4 {
+                font-size: 17px !important;
+            }
+            .column {
+                flex-direction: column !important;
+                button {
+                    font-size: 15px !important;
+                }
+            }
+        }
+        #leftIcons {
+            img {
+                width: 70px !important;
+                &:nth-child(2) {
+                    top: 35%;
+                    left: -5%;
+                }
+                &:nth-child(3) {
+                    left: calc(1% + (2 * 55px));
+                }
+                &:nth-child(4) {
+                    top: calc(10% + (80px - 2vw));
+                    left: 15%;
+                }
+            }
+        }
+        #rightIcons {
+            img {
+                &:nth-child(1) {
+                    height: 30vh;
+                }
+                &:nth-child(3) {
+                    left: 100%;
+                    width: 70px !important;
+                }
+            }
+        }
+        #startQuizBtn {
+            margin-top: 30px !important;
+            font-size: 15px;
+        }
+    }
+    #footer {
+        font-size: 13px;
+        img {
+            width: 70px;
+        }
+    }
+}

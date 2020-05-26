@@ -1,0 +1,174 @@
+{
+    "questions": [
+        {
+            "id": "1",
+            "question": "Kako se u hemiji nazivaju atomi, molekuli ili joni koji imaju neuparen elektron u spoljašnjoj elektronskoj ljusci?",
+            "answers": ["katjoni", "slobodni radikali", "anjoni", "izotopi"],
+            "correctAnswer": "anjoni"
+        },
+        {
+            "id": "2",
+            "question": "Koje jedinjenje je po hemijskom sastavu puževa kućica?",
+            "answers": [
+                "kalcijum-karbonat",
+                "kalcijum-oksid",
+                "kalcijum-sulfat",
+                "kalcijum-bikarbonat"
+            ],
+            "correctAnswer": "kalcijum-bikarbonat"
+        },
+        {
+            "id": "3",
+            "question": "Kako se u astronomiji zove neutronska zvijezda koja izuzetno brzo rotira (ponekad i hiljadu puta u sekundi!), emitujući jako elektromagnetno zračenje?",
+            "answers": ["Nebula", "Pulsar", "Bijeli patuljak", "Crveni džin"],
+            "correctAnswer": "Pulsar"
+        },
+        {
+            "id": "4",
+            "question": "Mars je planeta:",
+            "answers": ["crvene boje", "žute boje", "sive boje", "plave boje"],
+            "correctAnswer": "crvene boje"
+        },
+        {
+            "id": "5",
+            "question": "Koliko opština ima u CG?",
+            "answers": ["32", "23", "18", "26"],
+            "correctAnswer": "23"
+        },
+        {
+            "id": "6",
+            "question": "Kleopatra, kraljica poznata po svojoj mudrosti i ljepoti, vladala je:",
+            "answers": ["Persijom", "Egiptom", "Grčkom", "Indijom"],
+            "correctAnswer": "Egiptom"
+        },
+        {
+            "id": "7",
+            "question": "Zlatna palma je nagrada na filmskom festival u:",
+            "answers": ["Berlinu", "Kanu", "Veneciji", "Parizu"],
+            "correctAnswer": "Veneciji"
+        },
+        {
+            "id": "8",
+            "question": "Koje godine se završio I svjetski rat:",
+            "answers": ["1916", "1914", "1945", "1918"],
+            "correctAnswer": "1916"
+        },
+        {
+            "id": "9",
+            "question": "Koliko ima zvjezdica na zastavi EU:",
+            "answers": ["28", "27", "12", "15"],
+            "correctAnswer": "12"
+        },
+        {
+            "id": "10",
+            "question": "Broj PI iznosi:",
+            "answers": ["3,14", "5,11", "1,11", "2,17"],
+            "correctAnswer": "3,14"
+        },
+        {
+            "id": "11",
+            "question": "Izrazi kao što su “mala kucica” i “popeo se gore” nazivaju se:",
+            "answers": ["oksimoron", "pleonazam", "enklitika", "sinonim"],
+            "correctAnswer": "pleonazam"
+        },
+        {
+            "id": "12",
+            "question": "Stogodišnji rat koji je obuhvatao drugu polovinu 14. I prvu polovinu 15.vijeka vodile su:",
+            "answers": [
+                "Francuska I Engleska",
+                "Pruska I Austrija",
+                "Francuska I Bavarska",
+                "Engleska I Irska"
+            ],
+            "correctAnswer": "Engleska I Irska"
+        },
+        {
+            "id": "13",
+            "question": "Koja koncentrovana kisjelina se krije iza starog imena vitriolovo ulje ili vitriol, a danas se najčešće dobija kontaktnim postupkom?",
+            "answers": [
+                "hlorovodonična kiselina",
+                "azotna kiselina",
+                "sumporna kiselina",
+                "sumporasta kiselina"
+            ],
+            "correctAnswer": "sumporasta kiselina"
+        },
+        {
+            "id": "14",
+            "question": "Kubizam je:",
+            "answers": [
+                "pravac u umjetnosti",
+                "instrument u građevinarstvu",
+                "likovna tehnika",
+                "dio geometrije"
+            ],
+            "correctAnswer": "instrument u građevinarstvu"
+        },
+        {
+            "id": "15",
+            "question": "Telefon je otkrio:",
+            "answers": [
+                "Aleksandrar Bel",
+                "Tomas Edison",
+                "Džems Vat",
+                "Nikola Tesla"
+            ],
+            "correctAnswer": "Aleksandrar Bel"
+        },
+        {
+            "id": "16",
+            "question": "Seobe je napisao:",
+            "answers": [
+                "Meša Selimović",
+                "Miloš Crnjanski",
+                "Ivo Andrić",
+                "Borislav Pekić"
+            ],
+            "correctAnswer": "Miloš Crnjanski"
+        },
+        {
+            "id": "17",
+            "question": "Kako se zove emisija elektrona iz metala pod djejstvom svjetlosti za čije naučno objašnjenje je Albert Ajnštajn 1921. godine dobio Nobelovu nagradu za fiziku?",
+            "answers": [
+                "Opalescencija",
+                "Fotoluminiscencija",
+                "Katodni zrak",
+                "Fotoelektrični efekat"
+            ],
+            "correctAnswer": "Fotoelektrični efekat"
+        },
+        {
+            "id": "18",
+            "question": "Kako se u nuklearnoj fizici zove najmanja količina radioaktivnog materijala potrebna da bi se uzrokovala nuklearna lančana reakcija?",
+            "answers": [
+                "Crvena tačka",
+                "Kritična masa",
+                "Uranijamska masa",
+                "Tačka pucanja"
+            ],
+            "correctAnswer": "Kritična masa"
+        },
+        {
+            "id": "19",
+            "question": "Supstanca koja se ne može razložiti na još jednostavnije supstance je:",
+            "answers": [
+                "homogena smješa",
+                "heterogena smješa",
+                "hemijsko jedinjenje",
+                "hemijski element"
+            ],
+            "correctAnswer": "heterogena smješa"
+        },
+        {
+            "id": "20",
+            "question": "Reakcija izmedu kiseline i baze, u kojoj nastaju voda i so , naziva se:",
+            "answers": [
+                "supstitucija",
+                "neutralizacija",
+                "adicija",
+                "esterifikacija"
+            ],
+            "correctAnswer": "esterifikacija"
+        }
+    ]
+}

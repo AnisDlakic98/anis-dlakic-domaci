@@ -1,0 +1,19 @@
+/*
+-------------------------------------------
+FileName: _footer.scss
+Component: Footer 
+-------------------------------------------
+*/
+#footer {
+    background: $secondary_color;
+    font-family: "Helvetica Neue Light";
+    font-size: 17px;
+    color: $white;
+    text-align: center;
+    padding: 20px 0;
+    img {
+        width: 100px;
+        position: relative;
+        top: 3px;
+    }
+}

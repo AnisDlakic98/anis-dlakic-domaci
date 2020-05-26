@@ -1,0 +1,45 @@
+/*
+-------------------------------------------
+FileName: _multiStep.scss
+Component: MultiStep Form 
+-------------------------------------------
+*/
+.tab {
+    display: none;
+}
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+#stepNo {
+    font-family: "Helvetica Neue Light";
+    font-size: 20px;
+    margin-top: 20px !important;
+}
+
+#quizResultMessage {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 120px;
+}
+
+.message_img {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+}

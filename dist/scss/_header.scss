@@ -1,56 +1,196 @@
 /*
 -------------------------------------------
 FileName: _header.scss
-Component: Header 
+Component: Header
 -------------------------------------------
 */
+
+$duration: 0.4s;
+
 #header {
-    z-index: 9999;
+    z-index: 99999999;
     position: fixed;
     width: 100%;
-    background: $white;
-    -webkit-box-shadow: 0px 2px 4px rgba(47, 46, 65, 0.4);
+    height: 70px;
+    padding: 0;
     box-shadow: 0px 2px 4px rgba(47, 46, 65, 0.4);
-    .navbar {
+    background: $white;
+
+    &.sticky {
+        .navicon {
+            background: $secondary_color !important;
+            &:before,
+            &:after {
+                background: $secondary_color !important;
+            }
+        }
+        .navicon-button {
+            &.open {
+                .navicon {
+                    background: transparent !important;
+                }
+            }
+        }
+        background: $white;
+        box-shadow: 0px 2px 4px rgba(47, 46, 65, 0.4);
+    }
+    .nav_item {
+        margin: 0 20px;
+        position: relative;
+        line-height: 70px;
+        &.active {
+            .nav_link {
+                font-family: "Helvetica Neue Medium";
+            }
+            &::before {
+                opacity: 1;
+                bottom: 10px;
+            }
+        }
+        &::before {
+            width: 100%;
+            bottom: 0;
+            opacity: 0;
+            transition: 0.4s;
+            height: 5px;
+            content: "";
+            position: absolute;
+            background-color: $primary_color;
+        }
+        &:hover {
+            opacity: 1;
+            &::before {
+                bottom: 10px;
+                opacity: 1;
+            }
+        }
+        .nav_link {
+            font-family: "Helvetica Neue Light";
+            font-size: 18px;
+            color: $secondary_color;
+            text-transform: uppercase;
+        }
+    }
+
+    .navicon_wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navicon-button {
+        padding: 23px 0;
+        margin: 0 15px;
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+
+        transition: $duration/2;
+        cursor: pointer;
+        user-select: none;
+        @media only screen and (min-width: 992px) {
+            display: none;
+        }
+        &.open {
+            &:not(.steps) .navicon:before,
+            &:not(.steps) .navicon:after {
+                top: 0 !important;
+            }
+            .navicon {
+                background: transparent;
+                &:before,
+                &:after {
+                    transition: $duration;
+                    background: $secondary_color;
+                }
+                &:before {
+                    transform: rotate(-45deg);
+                }
+                &:after {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        .navicon {
+            position: relative;
+            width: 36px;
+            height: 4px;
+            background: $white;
+
+            transition: $duration;
+            &:before,
+            &:after {
+                display: block;
+                content: "";
+                height: 4px;
+                width: 36px;
+                background: $white;
+                position: absolute;
+                z-index: -1;
+
+                transition: $duration/2;
+            }
+            &:before {
+                top: 10px;
+            }
+            &:after {
+                top: -10px;
+            }
+        }
+        &:hover {
+            transition: $duration;
+            .navicon:before,
+            .navicon:after {
+                transition: $duration/2;
+            }
+        }
+    }
+    nav {
+        opacity: 0;
+        pointer-events: none;
+        padding: 0;
         .nav_list {
             display: flex;
             justify-content: center;
-            .nav_item {
-                margin: 0 22px;
-                padding: 30px 0;
-                position: relative;
-                &.active {
-                    .nav_link {
-                        font-family: "Helvetica Neue Medium";
-                    }
-                    &::before {
-                        opacity: 1;
-                        bottom: 10px;
-                    }
-                }
-                &::before {
-                    width: 100%;
-                    bottom: 0;
-                    opacity: 0;
-                    transition: 0.4s;
-                    height: 5px;
-                    content: "";
-                    position: absolute;
-                    background-color: $primary_color;
-                }
-                &:hover {
-                    opacity: 1;
-                    &::before {
-                        bottom: 10px;
-                        opacity: 1;
-                    }
-                }
-                .nav_link {
-                    font-family: "Helvetica Neue Light";
-                    font-size: 18px;
-                    color: $secondary_color;
-                    text-transform: uppercase;
-                }
+        }
+        transition: 0.4s;
+
+        &.nav-expanded {
+            opacity: 1;
+            pointer-events: visible;
+        }
+        @media only screen and (min-width: 992px) {
+            opacity: 1;
+            pointer-events: visible;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    #header {
+        background: transparent;
+        box-shadow: none;
+    }
+    .navicon_wrapper {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+    }
+    .nav_list {
+        flex-direction: column;
+        background: $white;
+        box-shadow: 0px 2px 4px rgba(47, 46, 65, 0.4);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        padding-top: 50px;
+        .nav_item {
+            width: 50%;
+            margin: auto !important;
+            .nav_link {
+                display: flex;
+                justify-content: center;
             }
         }
     }
