@@ -56,3 +56,13 @@ $(document).ready(function () {
         }
     });
 });
+
+//________Preloader________//
+$(window).on("load", function () {
+    $("body").css("overflow-y", "hidden");
+    setTimeout(() => {
+        $(window).scrollTop(0);
+        $("#preloader").fadeOut(500);
+        $("body").css("overflow-y", "visible");
+    }, 1500);
+});

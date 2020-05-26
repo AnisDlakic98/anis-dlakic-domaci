@@ -44,30 +44,30 @@ class Questions {
         return selected;
     }
     resetQuestions() {
-        // location.reload();
+        location.reload();
 
-        quizForm.empty();
+        // quizForm.empty();
 
-        let html = `
-        <div class="d-flex">
-            <button type="button" id="skipBtn" class="m_auto">Sljedeće</button>
-        </div>
-        <div class="d-flex">
-            <span id="stepNo" class="m_auto">
-                <strong>1</strong><span>/5</span>
-            </span>
-        </div>`;
-        quizForm.html(html);
-        console.log(currentTab);
-        quizSection.removeClass("active");
+        // let html = `
+        // <div class="d-flex">
+        //     <button type="button" id="skipBtn" class="m_auto">Sljedeće</button>
+        // </div>
+        // <div class="d-flex">
+        //     <span id="stepNo" class="m_auto">
+        //         <strong>1</strong><span>/5</span>
+        //     </span>
+        // </div>`;
+        // quizForm.html(html);
+        // console.log(currentTab);
+        // quizSection.removeClass("active");
 
-        this.getQuestions().then((array) => {
-            let { questions } = array;
-            let displayQuestions = this.getRandom(questions, 10);
-            questionsObject.appendQuestions(displayQuestions);
-            showTab(0);
-            currentTab = 0;
-        });
+        // this.getQuestions().then((array) => {
+        //     let { questions } = array;
+        //     let displayQuestions = this.getRandom(questions, 2);
+        //     questionsObject.appendQuestions(displayQuestions);
+        //     showTab(0);
+        //     currentTab = 0;
+        // });
     }
     appendQuestions(array) {
         let tabs = "";
@@ -216,9 +216,8 @@ function skipQuestion(n) {
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
 
-    if (currentTab == x.length + 1) {
-        alert("kraj");
-        return;
-    }
+    // if (currentTab == x.length + 1) {
+    //     return;
+    // }
     showTab(currentTab);
 }

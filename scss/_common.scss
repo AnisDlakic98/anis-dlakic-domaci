@@ -4,6 +4,20 @@ FileName: _common.scss
 Component: Presets
 -------------------------------------------
 */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #eef8ff;
+    z-index: 999999999;
+    display: flex;
+    img {
+        margin: auto;
+        width: 300px;
+    }
+}
 * {
     box-sizing: border-box;
 }
