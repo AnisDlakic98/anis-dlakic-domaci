@@ -22,12 +22,42 @@ var limit = false;
 //________after DOM is loaded________//
 document.addEventListener("DOMContentLoaded", () => {
     const urlRegex = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-    validateInput("projectName", false, 50);
-    validateInput("shortDescIdea", false, 150);
-    validateInput("elaborationIdea", false, 2000);
-    validateInput(`article1`, false, 50);
-    validateInput(`biography1`, false, 150);
-    validateInput(`video`, urlRegex, 150);
+    validateInput(
+        "projectName",
+        false,
+        50,
+        "Polje može imati između 2 i 50 karaktera"
+    );
+    validateInput(
+        "shortDescIdea",
+        false,
+        150,
+        "Polje može imati između 2 i 150 karaktera"
+    );
+    validateInput(
+        "elaborationIdea",
+        false,
+        2000,
+        "Polje može imati između 2 i 200 karaktera"
+    );
+    validateInput(
+        `article1`,
+        false,
+        50,
+        "Član može imati između 2 i 50 karaktera"
+    );
+    validateInput(
+        `biography1`,
+        false,
+        150,
+        "Biografija može imati između 2 i 150 karaktera"
+    );
+    validateInput(
+        `video`,
+        urlRegex,
+        150,
+        "Biografija može imati između 2 i 150 karaktera"
+    );
 
     backBtn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -71,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <input
                         type="text"
-                        class="form-control"
+                        class="form-control form-input"
                         placeholder="Ime i prezime"
                         name="article${tempArticle}"
                         id="article${tempArticle}"
@@ -81,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="form-group">
                     <input
                         type="text"
-                        class="form-control"
+                        class="form-control form-input"
                         placeholder="Kratka biografija (max 150 karaktera)"
                         name="biography${tempArticle}"
                         id="biography${tempArticle}"
@@ -90,8 +120,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
         articles.appendChild(newNode);
-        validateInput(`article${tempArticle}`, false, 2000);
-        validateInput(`biography${tempArticle}`, false, 2000);
+        validateInput(
+            `article${tempArticle}`,
+            false,
+            200,
+            "Član može imati između 2 i 50 karaktera"
+        );
+        validateInput(
+            `biography${tempArticle}`,
+            false,
+            200,
+            "Biografija može imati između 2 i 150 karaktera"
+        );
         if (tempArticle == max) {
             limit = true;
         } else {
@@ -210,6 +250,17 @@ function validateForm() {
     var booleans = [];
 
     for (i = 0; i < y.length; i++) {
+        if (y[i].value.match(/^\s+$/) === null && y[i].id !== "selectedFile") {
+            y[i].classList.add("invalid");
+            y[i].nextElementSibling.innerHTML = "Polje je obavezno!";
+            if (y[i].nextElementSibling != null) {
+                y[i].nextElementSibling.innerHTML = "Polje je obavezno!";
+            } else {
+                y[i].parentElement.nextElementSibling.innerHTML =
+                    "Polje je obavezno!";
+            }
+        }
+
         if (y[i].nextElementSibling != null) {
             sibling = y[i].nextElementSibling;
         } else {
@@ -251,35 +302,85 @@ function submitForm() {
     document.getElementById("formResults").innerHTML = listItems;
 }
 
-validateInput = (input, regex, length) => {
+validateInput = (input, regex, length, msg) => {
     var inputObject = document.getElementById(input);
     var validRegex = true;
-    inputObject.oninput = () => {
+
+    inputObject.onkeyup = () => {
         var is_input = inputObject.value;
+        is_input = is_input.trim();
+
         var input_msg = inputObject.nextElementSibling;
 
-        if (regex != false) {
-            regex.test(inputObject.value)
-                ? (validRegex = true)
-                : (validRegex = false);
-        }
-        if (length != false) {
-            inputObject.value.length <= length && inputObject.value.length >= 2
-                ? (is_input = true)
-                : (is_input = false);
-        }
-
-        if (is_input && validRegex) {
-            inputObject.classList.remove("invalid");
-            inputObject.classList.add("valid");
-            input_msg.classList.remove("invalid");
-        } else {
+        if (
+            inputObject.value.trim() === "" &&
+            inputObject.id !== "selectedFile"
+        ) {
+            console.log("ne");
+            input_msg.classList.remove("valid");
+            input_msg.classList.add("invalid");
             inputObject.classList.remove("valid");
             inputObject.classList.add("invalid");
-            input_msg.classList.add("invalid");
+            input_msg.innerHTML = "Polje je obavezno!";
+            is_input = false;
+        } else {
+            if (regex != false) {
+                regex.test(inputObject.value.trim())
+                    ? (validRegex = true)
+                    : (validRegex = false);
+            }
+            if (length != false) {
+                if (
+                    inputObject.value.trim().length <= length &&
+                    inputObject.value.trim().length >= 2
+                ) {
+                    is_input = true;
+                } else {
+                    input_msg.innerHTML = msg;
+                    is_input = false;
+                }
+            }
+
+            if (
+                inputObject.value.match(/^\s+$/) === null &&
+                inputObject.value.trim().length >= 2
+            ) {
+                is_input = true;
+            } else {
+                input_msg.innerHTML = "Polje je obavezno!";
+                is_input = false;
+            }
+
+            if (
+                inputObject.value.trim().length > length ||
+                inputObject.value.trim().length < 2
+            ) {
+                input_msg.innerHTML = msg;
+                is_input = false;
+            }
+
+            if (is_input && validRegex) {
+                inputObject.classList.remove("invalid");
+                inputObject.classList.add("valid");
+                input_msg.classList.add("valid");
+                input_msg.classList.remove("invalid");
+            } else {
+                inputObject.classList.remove("valid");
+                inputObject.classList.add("invalid");
+                input_msg.classList.remove("valid");
+                input_msg.classList.add("invalid");
+            }
         }
     };
 };
+
+//________Preloader________//
+$(window).on("load", function () {
+    setTimeout(() => {
+        $(window).scrollTop(0);
+        $("#preloader").fadeOut(500);
+    }, 1500);
+});
 
 function validateFile(input) {
     var inputObject = document.getElementById(input);

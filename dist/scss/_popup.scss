@@ -91,6 +91,12 @@
         }
         .form-control {
             height: 60px;
+            &::-webkit-input-placeholder {
+                opacity: 0.5 !important;
+            }
+            &:-moz-placeholder {
+                opacity: 0.5 !important;
+            }
         }
         textarea {
             padding-top: 25px;
@@ -115,9 +121,11 @@
             box-sizing: border-box;
             &::-webkit-input-placeholder {
                 color: $white;
+                opacity: 0.5 !important;
             }
             &:-moz-placeholder {
                 color: $white;
+                opacity: 0.5 !important;
             }
         }
     }
@@ -181,10 +189,10 @@
 }
 
 #current_step {
-    width: 57px;
-    height: 57px;
+    height: 66px;
+    width: 66px;
+    line-height: 66px;
     cursor: pointer;
-    line-height: 57px;
     border: solid 2px $white;
     border-radius: 100%;
     font-family: $font_stack_1;
@@ -224,4 +232,8 @@
         bottom: 50%;
         opacity: 1;
     }
+}
+
+#finalTab {
+    display: none;
 }

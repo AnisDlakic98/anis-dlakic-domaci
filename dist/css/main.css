@@ -1,11 +1,4 @@
 /*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
-/*
 -------------------------------------------
 File Name: main.scss
 Created By: Anis Dlakic
@@ -13,9 +6,26 @@ Website: BoostMeUp
 Version: 1.0
 -------------------------------------------
 */
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap");
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #eef8ff;
+  z-index: 999999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#preloader img {
+  margin: auto;
+  width: 150px !important;
+}
+
 ul {
   list-style: none;
 }
@@ -48,8 +58,8 @@ h2 {
 
 .d-flex.justify-content-between {
   -webkit-box-pack: justify !important;
-  -ms-flex-pack: justify !important;
-  justify-content: space-between !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
 }
 
 .remove {
@@ -57,7 +67,6 @@ h2 {
   color: #ffff;
   cursor: pointer;
   -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -74,13 +83,11 @@ h2 {
 BUTTONS
 -------------------------------------------
 */
-
 .btn {
   -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
   transition: 0.4s;
   border-radius: 35px;
-  padding: 16px 85px;
+  padding: 21px 79px;
   font-size: 18px;
   outline: none !important;
   font-family: "Roboto", sans-serif;
@@ -107,7 +114,8 @@ BUTTONS
   color: #ffff;
 }
 
-#addArticleBtn, #removeArticleBtn {
+#addArticleBtn,
+#removeArticleBtn {
   width: 100%;
   border-radius: 8px;
   border-color: #ffffff57;
@@ -130,7 +138,6 @@ body::before {
   content: "";
   background: url(../img/multistep/bg.svg);
   -webkit-transition: 0.7s;
-  -o-transition: 0.7s;
   transition: 0.7s;
   position: absolute;
   top: 0;
@@ -146,8 +153,7 @@ body::after {
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  transform: translate(-50%);
+          transform: translate(-50%);
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -219,7 +225,6 @@ body.finish .multi__step #formResults li {
   position: relative;
   top: 70px;
   -webkit-transition: 0.7s;
-  -o-transition: 0.7s;
   transition: 0.7s;
 }
 
@@ -227,7 +232,6 @@ body.finish .multi__step #formResults li {
   width: 526px;
   height: 140px;
   -webkit-transition: 0.7s;
-  -o-transition: 0.7s;
   transition: 0.7s;
 }
 
@@ -236,8 +240,7 @@ body.finish .multi__step #formResults li {
   top: 5rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 1;
 }
 
@@ -288,6 +291,7 @@ body.finish .multi__step #formResults li {
 
 .main_footer .info {
   margin-top: 20px;
+  margin-left: 90px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -321,7 +325,6 @@ body.finish .multi__step #formResults li {
   background: #ffff;
   border-radius: 50%;
   -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -332,8 +335,7 @@ body.finish .multi__step #formResults li {
 
 .main_footer .social ul li a:hover {
   -webkit-transform: translateY(-10px);
-  -ms-transform: translateY(-10px);
-  transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .main_footer h3 {
@@ -354,8 +356,7 @@ body.finish .multi__step #formResults li {
 
 body.active::before {
   -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 body.active .main__slide {
@@ -387,7 +388,6 @@ body.active .wrapper_logo img {
   opacity: 0;
   pointer-events: none;
   -webkit-transition: 0.7s;
-  -o-transition: 0.7s;
   transition: 0.7s;
   z-index: 1;
 }
@@ -416,8 +416,8 @@ body.active .wrapper_logo img {
 
 .multi_step_form .d-flex {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .multi_step_form h1 {
@@ -439,11 +439,10 @@ body.active .wrapper_logo img {
   font-size: 15px;
   margin-top: 7px;
   -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
   transition: 0.5s;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -526,15 +525,24 @@ body.active .wrapper_logo img {
   height: 60px;
 }
 
+.multi_step_form .form-group .form-control::-webkit-input-placeholder {
+  opacity: 0.5 !important;
+}
+
+.multi_step_form .form-group .form-control:-moz-placeholder {
+  opacity: 0.5 !important;
+}
+
 .multi_step_form .form-group textarea {
   padding-top: 25px;
 }
 
-.multi_step_form .form-group .form-control, .multi_step_form .form-group textarea {
+.multi_step_form .form-group .form-control,
+.multi_step_form .form-group textarea {
   width: 100%;
   background: #ffffff24;
   -webkit-box-shadow: 0px 0px 5px #e879db;
-  box-shadow: 0px 0px 5px #e879db;
+          box-shadow: 0px 0px 5px #e879db;
   border: none;
   border-radius: 8px;
   opacity: 1;
@@ -549,18 +557,20 @@ body.active .wrapper_logo img {
   box-sizing: border-box;
 }
 
-.multi_step_form .form-group .form-control::-webkit-input-placeholder, .multi_step_form .form-group textarea::-webkit-input-placeholder {
+.multi_step_form .form-group .form-control::-webkit-input-placeholder,
+.multi_step_form .form-group textarea::-webkit-input-placeholder {
   color: #ffff;
+  opacity: 0.5 !important;
 }
 
-.multi_step_form .form-group .form-control:-moz-placeholder, .multi_step_form .form-group textarea:-moz-placeholder {
+.multi_step_form .form-group .form-control:-moz-placeholder,
+.multi_step_form .form-group textarea:-moz-placeholder {
   color: #ffff;
+  opacity: 0.5 !important;
 }
 
 /* Mark input boxes that gets an error on validation: */
-
 /* Hide all steps by default: */
-
 .tab {
   display: none;
 }
@@ -598,7 +608,6 @@ body.active .wrapper_logo img {
 }
 
 /* Make circles that indicate the steps of the form: */
-
 .step {
   height: 15px;
   width: 15px;
@@ -615,23 +624,21 @@ body.active .wrapper_logo img {
 }
 
 /* Mark the steps that are finished and valid: */
-
 .step.finish {
   background-color: #4caf50;
 }
 
 #current_step {
-  width: 57px;
-  height: 57px;
+  height: 66px;
+  width: 66px;
+  line-height: 66px;
   cursor: pointer;
-  line-height: 57px;
   border: solid 2px #ffff;
   border-radius: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: #ffff;
   -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
   transition: 0.4s;
   font-weight: 400;
   margin-top: 19px;
@@ -655,7 +662,6 @@ body.active .wrapper_logo img {
   right: 0;
   opacity: 0;
   -webkit-transition: 1s;
-  -o-transition: 1s;
   transition: 1s;
 }
 
@@ -674,8 +680,16 @@ body.active .wrapper_logo img {
   opacity: 1;
 }
 
+#finalTab {
+  display: none;
+}
+
 @-webkit-keyframes bounceInLeft {
-  from, 60%, 75%, 90%, to {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
@@ -704,7 +718,11 @@ body.active .wrapper_logo img {
 }
 
 @keyframes bounceInLeft {
-  from, 60%, 75%, 90%, to {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
@@ -855,8 +873,7 @@ body.active .wrapper_logo img {
   }
   body.active::before {
     -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
+            transform: scale(1.1);
   }
   body.active .main__slide {
     opacity: 0;
@@ -873,7 +890,8 @@ body.active .wrapper_logo img {
   body.active .wrapper_logo img {
     width: 246px;
   }
-  h2, h1 {
+  h2,
+  h1 {
     width: 90% !important;
     font-size: 30px !important;
   }
@@ -882,8 +900,7 @@ body.active .wrapper_logo img {
     right: 50%;
     bottom: auto;
     -webkit-transform: translate(50%);
-    -ms-transform: translate(50%);
-    transform: translate(50%);
+            transform: translate(50%);
   }
   .main_footer .social ul {
     padding: 0;
@@ -959,6 +976,7 @@ body.active .wrapper_logo img {
   }
   .main_footer .info {
     display: block;
+    margin-left: 0;
   }
   .main_footer .info h3 {
     text-align: center;
@@ -967,3 +985,4 @@ body.active .wrapper_logo img {
     width: 100%;
   }
 }
+/*# sourceMappingURL=main.css.map */

@@ -32,6 +32,9 @@
     </head>
 
     <body class="">
+        <div id="preloader">
+            <img src="img/preloader.gif" alt="prelader-gif" />
+        </div>
         <div class="wrapper">
             <button type="button" class="btn btn_primary" id="backBtn">
                 <img src="img/arrow-left.svg" alt="" /> Nazad
@@ -141,7 +144,7 @@
                                     id="projectName"
                                 />
                                 <span class="input_msg"
-                                    >Naziv projekta 2 – 50 karaktera</span
+                                    >Polje je obavezno!</span
                                 >
                             </div>
                             <div class="form-group">
@@ -268,7 +271,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="tab pt-60">
+                        <div class="tab pt-60" id="finalTab">
                             <h1>Uspješna prijava!</h1>
                             <ul id="formResults">
                                 <li><b>Naziv projekta: </b><span></span></li>
@@ -339,7 +342,7 @@
             <img src="img/multistep/final1.svg" class="right" alt="" />
         </div>
         <!-- JS Files Here -->
+        <script src="js/jquery.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/validation.js"></script>
     </body>
 </html>
