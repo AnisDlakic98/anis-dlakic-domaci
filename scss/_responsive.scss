@@ -50,6 +50,10 @@ FileName: _responsive.scss
         .appointmets_container {
             padding: 0;
         }
+        &::after {
+            top: 15px;
+            height: 95%;
+        }
     }
     #agenda {
         .container {
@@ -74,7 +78,7 @@ FileName: _responsive.scss
             img {
                 &:nth-child(1) {
                     z-index: 1;
-                    height: 40vh;
+                    height: 35vh;
                     right: 0;
                     bottom: 0;
                 }
@@ -120,6 +124,8 @@ FileName: _responsive.scss
         &::after {
             left: -60px;
             width: 160%;
+            height: 97%;
+            top: 15px;
         }
         .women {
             right: 50%;
@@ -206,6 +212,10 @@ FileName: _responsive.scss
             width: 120px;
             bottom: -100px;
         }
+        &::after {
+            height: 98%;
+            top: 12px;
+        }
     }
     #agenda {
         .section_title {
@@ -218,7 +228,7 @@ FileName: _responsive.scss
                 font-size: 17px !important;
             }
             .column {
-                flex-direction: column !important;
+                // flex-direction: column !important;
                 button {
                     font-size: 15px !important;
                 }
@@ -236,7 +246,7 @@ FileName: _responsive.scss
                 }
                 &:nth-child(4) {
                     top: calc(10% + (80px - 2vw));
-                    left: 15%;
+                    left: 55%;
                 }
             }
         }

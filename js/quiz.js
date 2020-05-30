@@ -77,22 +77,22 @@ class Questions {
                         <h4>${array[i].question}</h4>
                         <div class="question_btn_container">
                             <div class="column">
-                                <button type="button" 
-                                id="check_${array[i].id}_${i + 1}" 
+                                <button type="button"
+                                id="check_${array[i].id}_${i + 1}"
                                 class="check_btn"
                                 >${array[i].answers[0]}</button>
-                                <button type="button" 
-                                id="check_${array[i].id}_${i + 1}" 
+                                <button type="button"
+                                id="check_${array[i].id}_${i + 1}"
                                 class="check_btn"
                                 >${array[i].answers[1]}</button>
                             </div>
                             <div class="column">
-                                <button type="button" 
-                                id="check_${array[i].id}_${i + 1}" 
+                                <button type="button"
+                                id="check_${array[i].id}_${i + 1}"
                                 class="check_btn"
                                 >${array[i].answers[2]}</button>
-                                <button type="button" 
-                                id="check_${array[i].id}_${i + 1}" 
+                                <button type="button"
+                                id="check_${array[i].id}_${i + 1}"
                                 class="check_btn"
                                 >${array[i].answers[3]}</button>
                             </div>
@@ -127,6 +127,7 @@ class Funcionality {}
 
 //________Event Listeners_________//
 startQuizBtn.on("click", () => {
+    $("#quiz .column").css("flex-direction", "column");
     quizSection.addClass("active");
     quizForm.addClass("zoomIn");
 });

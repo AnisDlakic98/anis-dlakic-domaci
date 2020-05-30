@@ -33,9 +33,9 @@
 
     <body>
         <!-- ===================== Preloader ===================== -->
-        <div id="preloader">
+        <!-- <div id="preloader">
             <img src="img/preloader.gif" alt="prelader-gif" />
-        </div>
+        </div> -->
 
         <!-- ===================== Header ===================== -->
         <header id="header">
@@ -47,16 +47,16 @@
                 </div>
                 <nav>
                     <ul class="nav_list">
-                        <li class="nav_item">
+                        <li class="nav_item" data-scroll="project">
                             <a href="#project" class="nav_link">O projektu</a>
                         </li>
-                        <li class="nav_item">
+                        <li class="nav_item" data-scroll="appointments">
                             <a href="#appointments" class="nav_link">Termini</a>
                         </li>
-                        <li class="nav_item">
+                        <li class="nav_item" data-scroll="agenda">
                             <a href="#agenda" class="nav_link">Agenda</a>
                         </li>
-                        <li class="nav_item">
+                        <li class="nav_item" data-scroll="quiz">
                             <a href="#quiz" class="nav_link">Kviz</a>
                         </li>
                     </ul>
@@ -65,7 +65,7 @@
         </header>
 
         <!-- ===================== Masthead ===================== -->
-        <div id="masthead"></div>
+        <section id="masthead"></section>
 
         <!-- ===================== Project ===================== -->
         <section class="section skew" id="project">
@@ -168,7 +168,6 @@
                 </div>
             </div>
         </section>
-
         <!-- ===================== Jumbotron ===================== -->
         <section class="section skew" id="appointments">
             <div class="section_mask one"></div>
@@ -675,8 +674,8 @@
                 </div>
             </div>
             <div class="d-flex">
-                <button class="btn btn_primary m_auto" id="startQuizBtn">
-                    Započni kviz
+                <button class="m_auto" id="startQuizBtn">
+                    <img src="img/btn.svg" alt="" />
                 </button>
             </div>
         </section>
@@ -691,6 +690,12 @@
 
         <!-- JS Files Here -->
         <script src="js/jquery.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"
+            integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw="
+            crossorigin="anonymous"
+        ></script>
+
         <script src="js/quiz.js"></script>
         <script src="js/main.js"></script>
     </body>

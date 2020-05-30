@@ -44,7 +44,7 @@ $duration: 0.4s;
             }
             &::before {
                 opacity: 1;
-                bottom: 10px;
+                bottom: 17px;
             }
         }
         &::before {
@@ -52,7 +52,7 @@ $duration: 0.4s;
             bottom: 0;
             opacity: 0;
             transition: 0.4s;
-            height: 5px;
+            height: 3px;
             content: "";
             position: absolute;
             background-color: $primary_color;
@@ -60,7 +60,7 @@ $duration: 0.4s;
         &:hover {
             opacity: 1;
             &::before {
-                bottom: 10px;
+                bottom: 17px;
                 opacity: 1;
             }
         }

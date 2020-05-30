@@ -4,32 +4,47 @@
 
 $(document).ready(function () {
     //________Active Nav Link_________//
-    $(".nav_item").click(function () {
+    var navItem = $(".nav_item");
+    navItem.on("click", function (e) {
         $("header nav").removeClass("nav-expanded");
         $(".navicon-button").removeClass("open");
-        $(".nav_item").removeClass("active");
-        $(this).addClass("active");
-        var navLink = $(this).children()[0];
-        if (
-            location.pathname.replace(/^\//, "") ==
-                navLink.pathname.replace(/^\//, "") ||
-            location.hostname == navLink.hostname
-        ) {
-            var target = $(navLink.hash);
-            target = target.length
-                ? target
-                : $("[name=" + navLink.hash.slice(1) + "]");
-            if (target.length) {
-                $("html,body").animate(
-                    {
-                        scrollTop: target.offset().top - 32,
-                    },
-                    1000
-                );
-                return false;
-            }
-        }
+        var a = $($(this));
+        var link = a[0].children[0].href;
+        var pathArray = link.split("/");
+        pathArray = pathArray[pathArray.length - 1];
+        var target = pathArray.substring(1, pathArray.length);
+        var g = $("#" + target);
+        $("html, body").scrollTop(g.offset().top);
+        e.preventDefault();
     });
+
+    //________After scroll is triggered________//
+    $(window).on("scroll", function () {
+        scrollSpy();
+    });
+
+    //________ScrollSpy Navigation________//
+    function scrollSpy() {
+        var sTop = $(window).scrollTop();
+        $("section").each(function () {
+            var id = $(this).attr("id"),
+                offset = $(this).offset().top - 1,
+                height = $(this).height();
+            if (
+                $(window).scrollTop() + $(window).height() ==
+                $(document).height()
+            ) {
+                navItem.removeClass("active");
+                $(".nav_item:last-child").addClass("active");
+            }
+            if (sTop >= offset && sTop < offset + height) {
+                navItem.removeClass("active");
+                $("#header")
+                    .find('[data-scroll="' + id + '"]')
+                    .addClass("active");
+            }
+        });
+    }
 
     //________Mobile Navigation________//
     $(".navicon-button").click(function () {
@@ -58,11 +73,11 @@ $(document).ready(function () {
 });
 
 //________Preloader________//
-$(window).on("load", function () {
-    $("body").css("overflow-y", "hidden");
-    setTimeout(() => {
-        $(window).scrollTop(0);
-        $("#preloader").fadeOut(500);
-        $("body").css("overflow-y", "visible");
-    }, 1500);
-});
+// $(window).on("load", function () {
+//     $("body").css("overflow-y", "hidden");
+//     setTimeout(() => {
+//         $(window).scrollTop(0);
+//         $("#preloader").fadeOut(500);
+//         $("body").css("overflow-y", "visible");
+//     }, 1500);
+// });

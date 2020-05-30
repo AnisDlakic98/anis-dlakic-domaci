@@ -88,24 +88,6 @@ FileName: _common.scss
 Component: Presets
 -------------------------------------------
 */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  background: #eef8ff;
-  z-index: 999999999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#preloader img {
-  margin: auto;
-  width: 300px;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -114,7 +96,11 @@ Component: Presets
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -174,6 +160,24 @@ p {
   margin-left: auto;
 }
 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #eef8ff;
+  z-index: 999999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#preloader img {
+  margin: auto;
+  width: 300px;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -226,12 +230,25 @@ Component: Button
           transform: scale(1.1);
 }
 
+#startQuizBtn {
+  outline: none !important;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: none;
+}
+
+#startQuizBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .check_btn.wrong {
-  border: 2px solid #ff0000 !important;
+  border: 1px solid #ff0000 !important;
 }
 
 .check_btn.correct {
-  border: 2px solid #008300 !important;
+  border: 1px solid #008300 !important;
 }
 
 /*
@@ -281,7 +298,7 @@ Component: Header
 
 #header .nav_item.active::before {
   opacity: 1;
-  bottom: 10px;
+  bottom: 17px;
 }
 
 #header .nav_item::before {
@@ -290,7 +307,7 @@ Component: Header
   opacity: 0;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  height: 5px;
+  height: 3px;
   content: "";
   position: absolute;
   background-color: #edc106;
@@ -301,7 +318,7 @@ Component: Header
 }
 
 #header .nav_item:hover::before {
-  bottom: 10px;
+  bottom: 17px;
   opacity: 1;
 }
 
@@ -591,7 +608,7 @@ Component: Section
   -webkit-transform: matrix(1, -0.07, 0.07, 1, 0, 0);
           transform: matrix(1, -0.07, 0.07, 1, 0, 0);
   width: 120%;
-  top: 0;
+  top: -10px;
   left: -40px;
   position: absolute;
   z-index: -1;
@@ -769,27 +786,21 @@ Component: Section
 
 #agenda .undraw {
   position: absolute;
-  top: 50%;
+  top: 50vh;
   left: -450px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 #agenda img:nth-child(2) {
   position: absolute;
-  top: 20%;
+  top: 20vh;
   right: 20%;
-  -webkit-transform: translateY(-20%);
-          transform: translateY(-20%);
   z-index: 1;
 }
 
 #agenda img:nth-child(3) {
   position: absolute;
-  bottom: 20%;
+  top: 100vh;
   right: 25%;
-  -webkit-transform: translateY(-20%);
-          transform: translateY(-20%);
   z-index: 1;
 }
 
@@ -840,7 +851,7 @@ Component: Section
   background-color: #fff;
   padding: 25px 5px;
   margin: 10px;
-  border: 2px solid #707070;
+  border: 1px solid #707070;
   color: #2f2e41;
   font-family: "Helvetica Neue Light";
   font-size: 1.3rem;
@@ -885,7 +896,7 @@ Component: Section
 #quiz #leftIcons {
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
-  width: calc(100vh * 0.5);
+  width: calc(100vw * 0.5);
   display: inline-block;
   height: 100%;
   -webkit-transform: translateX(25vw);
@@ -1298,6 +1309,10 @@ FileName: _responsive.scss
   #appointments .appointmets_container {
     padding: 0;
   }
+  #appointments::after {
+    top: 15px;
+    height: 95%;
+  }
   #agenda .container {
     max-width: 650px;
   }
@@ -1314,7 +1329,7 @@ FileName: _responsive.scss
   }
   #quiz #rightIcons img:nth-child(1) {
     z-index: 1;
-    height: 40vh;
+    height: 35vh;
     right: 0;
     bottom: 0;
   }
@@ -1355,6 +1370,8 @@ FileName: _responsive.scss
   #appointments::after {
     left: -60px;
     width: 160%;
+    height: 97%;
+    top: 15px;
   }
   #appointments .women {
     right: 50%;
@@ -1434,17 +1451,15 @@ FileName: _responsive.scss
     width: 120px;
     bottom: -100px;
   }
+  #appointments::after {
+    height: 98%;
+    top: 12px;
+  }
   #agenda .section_title {
     margin-top: 50px;
   }
   #quiz .single_question_wrapp h4 {
     font-size: 17px !important;
-  }
-  #quiz .single_question_wrapp .column {
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
   }
   #quiz .single_question_wrapp .column button {
     font-size: 15px !important;
@@ -1461,7 +1476,7 @@ FileName: _responsive.scss
   }
   #quiz #leftIcons img:nth-child(4) {
     top: calc(10% + (80px - 2vw));
-    left: 15%;
+    left: 55%;
   }
   #quiz #rightIcons img:nth-child(1) {
     height: 30vh;

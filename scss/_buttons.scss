@@ -23,11 +23,21 @@ Component: Button
     }
 }
 
+#startQuizBtn {
+    outline: none !important;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 .check_btn {
     &.wrong {
-        border: 2px solid #ff0000 !important;
+        border: 1px solid #ff0000 !important;
     }
     &.correct {
-        border: 2px solid #008300 !important;
+        border: 1px solid #008300 !important;
     }
 }
